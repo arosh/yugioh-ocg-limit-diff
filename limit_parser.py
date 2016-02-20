@@ -3,12 +3,13 @@ import re
 import os
 import glob
 import collections
-import download
 
-Limitation = collections.namedtuple('Limitation', 'type rule_name card_name')
+Limit = collections.namedtuple('Limit', 'type rule_name card_name')
+
 
 def get_root_in_basename(fpath):
     return os.path.splitext(os.path.basename(fpath))[0]
+
 
 def extract(name, lines):
     e = []
@@ -29,20 +30,27 @@ def extract(name, lines):
         if typ in ['forbidden', 'one', 'two']:
             m = re.match(r"-(?:'')?\[\[《(.+)》\]\](?:'')?", line)
             if m:
-                e.append(Limitation(typ, name, m.group(1)))
+                e.append(Limit(typ, name, m.group(1)))
                 print(e[-1])
     assert typ == None
     return e
 
 
-def main():
+def run():
     for fname in glob.glob('pukiwiki/*.pukiwiki'):
         with open(fname, encoding='UTF-8') as f:
             lines = []
             for line in f:
                 lines.append(line)
-            name = download.ignore_slash(get_root_in_basename(fname))
-            e = extract(name, lines)
+            name = get_root_in_basename(fname)
+            limits = extract(name, lines)
+            for limit in limits:
+                yield limit
+
+
+def main():
+    for limit in run():
+        print(limit)
 
 if __name__ == '__main__':
     main()

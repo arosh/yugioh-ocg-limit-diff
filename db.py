@@ -2,6 +2,7 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
 import sqlite3
 
+
 def main():
     conn = sqlite3.connect('db.sqlite3')
     with conn:
@@ -13,7 +14,7 @@ def main():
                             id INTEGER PRIMARY KEY AUTOINCREMENT,
                             name TEXT,
                             url TEXT)''')
-        conn.execute('''CREATE TABLE limitations(
+        conn.execute('''CREATE TABLE limits(
                             id INTEGER PRIMARY KEY AUTOINCREMENT,
                             type TEXT,
                             rule_id INTEGER,
