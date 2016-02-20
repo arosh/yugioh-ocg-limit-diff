@@ -54,7 +54,6 @@ $(function () {
                             var span_tag = $("<span>").addClass(label[0]).text(label[1]);
                             li_tag.append(span_tag).append(" ");
                         }
-                        var a_tag = $("<a>").attr("href", )
                         li_tag.append(name);
                         elem.append(li_tag);
                     });
