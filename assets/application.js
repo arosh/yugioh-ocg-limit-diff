@@ -19,8 +19,8 @@ $(function () {
         });
 
         $("#run").on("click", function () {
-            var old_name = $("[name=old-regulation]").val();
-            var new_name = $("[name=new-regulation]").val();
+            var old_name = $("[name=old-regulation] option:selected").text();
+            var new_name = $("[name=new-regulation] option:selected").text();
 
             (function () {
                 var old_url = rule_name_to_url[ignore_slash(old_name)];
