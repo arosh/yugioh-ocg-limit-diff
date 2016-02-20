@@ -31,7 +31,6 @@ def extract(name, lines):
             m = re.match(r"-(?:'')?\[\[《(.+)》\]\](?:'')?", line)
             if m:
                 e.append(Limit(typ, name, m.group(1)))
-                print(e[-1])
     assert typ == None
     return e
 
