@@ -11,7 +11,7 @@ def get_root_in_basename(fpath):
     return os.path.splitext(os.path.basename(fpath))[0]
 
 
-def extract(name, lines):
+def extract(rule_name, lines):
     e = []
     typ = None
     for line in lines:
@@ -28,9 +28,14 @@ def extract(name, lines):
             assert typ == 'two'
             typ = None
         if typ in ['forbidden', 'one', 'two']:
-            m = re.match(r"-(?:'')?\[\[《(.+)》\]\](?:'')?", line)
+            m = re.match(r"-(?:'''?)?\[\[《(.+)》\]\](?:'''?)?", line)
             if m:
-                e.append(Limit(typ, name, m.group(1)))
+                card_name = m.group(1)
+                if card_name == 'Reborn Tengu》>《輪廻天狗':
+                    card_name = '輪廻天狗'
+                if '《' in card_name or '》' in card_name:
+                    print(card_name)
+                e.append(Limit(typ, rule_name, card_name))
     assert typ == None
     return e
 
