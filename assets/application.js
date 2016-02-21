@@ -126,16 +126,20 @@ $(function () {
                 extend_cards(
                     free_ul_tag,
                     _.difference(old_limit["forbidden"], new_limit_all),
-                    [labels[3], "禁止 > 無制限"]);
+                    [labels[3], "禁止 > 制限解除"]);
                 extend_cards(
                     free_ul_tag,
                     _.difference(old_limit["one"], new_limit_all),
-                    [labels[3], "制限 > 無制限"]);
+                    [labels[3], "制限 > 制限解除"]);
                 extend_cards(
                     free_ul_tag,
                     _.difference(old_limit["two"], new_limit_all),
-                    [labels[3], "準制限 > 無制限"]);
+                    [labels[3], "準制限 > 制限解除"]);
             })();
         });
+
+        $("[name=old-regulation] option:nth-child(2)").prop('selected', true);
+        $("[name=new-regulation] option:nth-child(1)").prop('selected', true);
+        $("#run").click();
     });
 });
