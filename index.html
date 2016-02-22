@@ -12,18 +12,15 @@
     <div class="row">
         <div class="panel panel-default">
             <div class="panel-body">
-                <form class="form-inline">
+                <form>
                     <div class="form-group">
-                        <label>旧レギュレーション
-                            <select name="old-regulation" class="form-control"></select>
-                        </label>
+                        <label for="old-regulation">旧レギュレーション</label>
+                        <select id="old-regulation" name="old-regulation" class="form-control"></select>
                     </div>
                     <div class="form-group">
-                        <label>新レギュレーション
-                            <select name="new-regulation" class="form-control"></select>
-                        </label>
+                        <label for="new-regulation">新レギュレーション</label>
+                        <select id="new-regulation" name="new-regulation" class="form-control"></select>
                     </div>
-                    <button id="run" class="btn btn-default" type="button">表示</button>
                 </form>
             </div>
         </div>
@@ -32,8 +29,7 @@
         </div>
         <div class="panel panel-danger">
             <div class="panel-heading">禁止カード</div>
-            <ul id="forbidden" class="list-group">
-            </ul>
+            <ul id="forbidden" class="list-group"></ul>
         </div>
         <div class="panel panel-warning">
             <div class="panel-heading">制限カード</div>

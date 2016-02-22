@@ -18,7 +18,7 @@ $(function () {
             rule_name_to_url[ignore_slash(item.name)] = item.url;
         });
 
-        $("#run").on("click", function () {
+        var on_regulation_change = function () {
             var old_name = $("[name=old-regulation] option:selected").text();
             var new_name = $("[name=new-regulation] option:selected").text();
 
@@ -120,7 +120,6 @@ $(function () {
                     _.intersection(old_limit["two"], new_limit["two"]),
                     false);
 
-
                 var free_ul_tag = $("#free");
                 free_ul_tag.empty();
                 extend_cards(
@@ -136,10 +135,14 @@ $(function () {
                     _.difference(old_limit["two"], new_limit_all),
                     [labels[3], "準制限 > 制限解除"]);
             })();
-        });
+        };
+
+        $("[name=old-regulation]").on("change", on_regulation_change);
+        $("[name=new-regulation]").on("change", on_regulation_change);
 
         $("[name=old-regulation] option:nth-child(2)").prop('selected', true);
         $("[name=new-regulation] option:nth-child(1)").prop('selected', true);
-        $("#run").click();
+
+        on_regulation_change();
     });
 });
