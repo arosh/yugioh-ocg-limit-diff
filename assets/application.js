@@ -1,15 +1,15 @@
-$(function () {
-    var ignore_slash = function (s) {
+$(function() {
+    var ignore_slash = function(s) {
         return s.replace(/\//g, '');
     };
 
-    $.getJSON("resources/regulation.json", function (data) {
+    $.getJSON("resources/regulation.json", function(data) {
         $("[name=old-regulation]").empty();
         $("[name=new-regulation]").empty();
 
         var rule_name_to_url = {};
 
-        $.each(data["rules"].reverse(), function (index, item) {
+        $.each(data["rules"].reverse(), function(index, item) {
             var elem = $("<option>")
                 .attr("value", ignore_slash(item.name))
                 .text(item.name);
@@ -18,11 +18,11 @@ $(function () {
             rule_name_to_url[ignore_slash(item.name)] = item.url;
         });
 
-        var on_regulation_change = function () {
+        var on_regulation_change = function() {
             var old_name = $("[name=old-regulation] option:selected").text();
             var new_name = $("[name=new-regulation] option:selected").text();
 
-            (function () {
+            (function() {
                 var old_url = rule_name_to_url[ignore_slash(old_name)];
                 var new_url = rule_name_to_url[ignore_slash(new_name)];
 
@@ -40,15 +40,15 @@ $(function () {
 
                 var wiki_urls = $("#wiki-url");
                 wiki_urls.empty();
-                wiki_urls.append(old_li_tag).append(new_li_tag);
+                wiki_urls.append(new_li_tag).append(old_li_tag);
             })();
 
-            (function () {
+            (function() {
                 var old_limit = data["limits"][ignore_slash(old_name)];
                 var new_limit = data["limits"][ignore_slash(new_name)];
 
-                var extend_cards = function (elem, names, label) {
-                    $.each(names, function (index, name) {
+                var extend_cards = function(elem, names, label) {
+                    $.each(names, function(index, name) {
                         var li_tag = $("<li>").addClass("list-group-item");
                         if (label) {
                             var span_tag = $("<span>").addClass(label[0]).text(label[1]);
