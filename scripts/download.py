@@ -37,6 +37,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--rules', nargs='*')
     args = parser.parse_args()
+    args.rules = list(map(ignore_slash, args.rules))
     for rule in rule_parser.run():
         filename = make_filename(rule)
         if args.rules:

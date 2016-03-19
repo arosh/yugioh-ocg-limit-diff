@@ -16,8 +16,8 @@ def main():
         o['limits'][limit.rule_name].setdefault(limit.type, [])
         o['limits'][limit.rule_name][limit.type].append(limit.card_name)
 
-    with open('html/resources/regulation.json', 'w', encoding='UTF-8') as f:
-        json.dump(o, f)
+    with open('resources/regulation.json', 'w', encoding='UTF-8') as f:
+        json.dump(o, f, ensure_ascii=False)
 
 
 if __name__ == '__main__':
