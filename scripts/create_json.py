@@ -17,7 +17,7 @@ def main():
         o['limits'][limit.rule_name][limit.type].append(limit.card_name)
 
     with open('resources/regulation.json', 'w', encoding='UTF-8') as f:
-        json.dump(o, f, ensure_ascii=False)
+        json.dump(o, f, ensure_ascii=False, separators=(',', ':'))
 
 
 if __name__ == '__main__':
