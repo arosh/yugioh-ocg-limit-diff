@@ -2,7 +2,6 @@
 import os
 import lxml.html
 import collections
-import recordclass
 
 Rule = collections.namedtuple('Rule', 'name url')
 
