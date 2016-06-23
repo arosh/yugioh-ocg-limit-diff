@@ -14,7 +14,10 @@ def ignore_slash(s):
 
 
 def make_filename(rule):
-    return os.path.join('pukiwiki', ignore_slash(rule.name) + '.pukiwiki')
+    outdir = 'pukiwiki'
+    if not os.path.isdir(outdir):
+        os.mkdir(outdir)
+    return os.path.join(outdir, ignore_slash(rule.name) + '.pukiwiki')
 
 
 def download(show_url):
@@ -37,7 +40,9 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--rules', nargs='*')
     args = parser.parse_args()
-    args.rules = list(map(ignore_slash, args.rules))
+    if args.rules:
+        args.rules = list(map(ignore_slash, args.rules))
+
     for rule in rule_parser.run():
         filename = make_filename(rule)
         if args.rules:
