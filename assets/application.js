@@ -94,7 +94,12 @@ var App = (function (_super) {
         var newKey = App.ignoreSlash(rules[0].name);
         var oldKey = App.ignoreSlash(rules[1].name);
         this.state = {
-            rules: rules.map(function (item) { return { name: item.name, key: App.ignoreSlash(item.name) }; }),
+            rules: rules.map(function (item) {
+                return {
+                    name: item.name,
+                    key: App.ignoreSlash(item.name)
+                };
+            }),
             newKey: newKey,
             oldKey: oldKey,
             keyToUrl: keyToUrl,
@@ -111,7 +116,7 @@ var App = (function (_super) {
         this.setState({ oldKey: oldKey });
     };
     App.prototype.render = function () {
-        return (React.createElement("div", {className: "row"}, React.createElement("div", {className: "panel panel-default"}, React.createElement("div", {className: "panel-body"}, React.createElement(RegulationSelecter, {rules: this.state.rules, newKey: this.state.newKey, oldKey: this.state.oldKey, onNewKeyChange: this.onNewKeyChange.bind(this), onOldKeyChange: this.onOldKeyChange.bind(this)}))), React.createElement("div", {className: "panel panel-default"}, React.createElement(RegulationView, {newKey: this.state.newKey, oldKey: this.state.oldKey, keyToName: this.state.keyToName, keyToUrl: this.state.keyToUrl})), React.createElement(CardView, {newKey: this.state.newKey, oldKey: this.state.oldKey, computeDifference: this.props.computeDifference})));
+        return (React.createElement("div", {className: "container"}, React.createElement("div", {className: "row"}, React.createElement("h1", {className: "text-center"}, "遊戯王OCG リミットレギュレーション比較ツール")), React.createElement("div", {className: "row"}, React.createElement("div", {className: "panel panel-default"}, React.createElement("div", {className: "panel-body"}, React.createElement(RegulationSelecter, {rules: this.state.rules, newKey: this.state.newKey, oldKey: this.state.oldKey, onNewKeyChange: this.onNewKeyChange.bind(this), onOldKeyChange: this.onOldKeyChange.bind(this)}))), React.createElement("div", {className: "panel panel-default"}, React.createElement(RegulationView, {newKey: this.state.newKey, oldKey: this.state.oldKey, keyToName: this.state.keyToName, keyToUrl: this.state.keyToUrl})), React.createElement(CardView, {newKey: this.state.newKey, oldKey: this.state.oldKey, computeDifference: this.props.computeDifference}))));
     };
     return App;
 }(React.Component));

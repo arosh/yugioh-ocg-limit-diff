@@ -208,7 +208,12 @@ class App extends React.Component<AppProps, AppState> {
         const oldKey = App.ignoreSlash(rules[1].name);
 
         this.state = {
-            rules: rules.map((item) => { return { name: item.name, key: App.ignoreSlash(item.name) }; }),
+            rules: rules.map((item) => {
+                return {
+                    name: item.name,
+                    key: App.ignoreSlash(item.name)
+                };
+            }),
             newKey,
             oldKey,
             keyToUrl,
@@ -230,28 +235,33 @@ class App extends React.Component<AppProps, AppState> {
 
     render() {
         return (
-            <div className="row">
-                <div className="panel panel-default">
-                    <div className="panel-body">
-                        <RegulationSelecter
-                            rules={this.state.rules}
+            <div className="container">
+                <div className="row">
+                    <h1 className="text-center">遊戯王OCG リミットレギュレーション比較ツール</h1>
+                </div>
+                <div className="row">
+                    <div className="panel panel-default">
+                        <div className="panel-body">
+                            <RegulationSelecter
+                                rules={this.state.rules}
+                                newKey={this.state.newKey}
+                                oldKey={this.state.oldKey}
+                                onNewKeyChange={this.onNewKeyChange.bind(this) }
+                                onOldKeyChange={this.onOldKeyChange.bind(this) } />
+                        </div>
+                    </div>
+                    <div className="panel panel-default">
+                        <RegulationView
                             newKey={this.state.newKey}
                             oldKey={this.state.oldKey}
-                            onNewKeyChange={this.onNewKeyChange.bind(this) }
-                            onOldKeyChange={this.onOldKeyChange.bind(this) } />
+                            keyToName={this.state.keyToName}
+                            keyToUrl={this.state.keyToUrl} />
                     </div>
-                </div>
-                <div className="panel panel-default">
-                    <RegulationView
+                    <CardView
                         newKey={this.state.newKey}
                         oldKey={this.state.oldKey}
-                        keyToName={this.state.keyToName}
-                        keyToUrl={this.state.keyToUrl} />
+                        computeDifference={this.props.computeDifference} />
                 </div>
-                <CardView
-                    newKey={this.state.newKey}
-                    oldKey={this.state.oldKey}
-                    computeDifference={this.props.computeDifference} />
             </div>
         );
     }
@@ -303,8 +313,7 @@ $.getJSON("resources/regulation.json", (jsonFile: JsonFile) => {
             labelDanger,
             "無制限 > 禁止");
         const continuousForbiddenItems = createCardItemPropsWithoutLabels(
-            _.intersection(oldLimit["forbidden"], newLimit["forbidden"])
-        );
+            _.intersection(oldLimit["forbidden"], newLimit["forbidden"]));
         const forbiddenCardItems = oneToForbiddenItems
             .concat(twoToForbiddenItems)
             .concat(freeToForbiddenItems)
@@ -313,21 +322,17 @@ $.getJSON("resources/regulation.json", (jsonFile: JsonFile) => {
         const forbiddenToOneitems = createCardItemProps(
             _.intersection(oldLimit["forbidden"], newLimit["one"]),
             labelSuccess,
-            "禁止 > 制限"
-        );
+            "禁止 > 制限");
         const twoToOneitems = createCardItemProps(
             _.intersection(oldLimit["two"], newLimit["one"]),
             labelWarning,
-            "準制限 > 制限"
-        );
+            "準制限 > 制限");
         const freeToOneitems = createCardItemProps(
             _.difference(newLimit["one"], oldLimitAll),
             labelWarning,
-            "無制限 > 制限"
-        );
+            "無制限 > 制限");
         const continuousOneItems = createCardItemPropsWithoutLabels(
-            _.intersection(oldLimit["one"], newLimit["one"])
-        );
+            _.intersection(oldLimit["one"], newLimit["one"]));
         const oneCardItems = forbiddenToOneitems
             .concat(twoToOneitems)
             .concat(freeToOneitems)
@@ -346,8 +351,7 @@ $.getJSON("resources/regulation.json", (jsonFile: JsonFile) => {
             labelInfo,
             "無制限 > 準制限");
         const continuousTwoItems = createCardItemPropsWithoutLabels(
-            _.intersection(oldLimit["two"], newLimit["two"])
-        );
+            _.intersection(oldLimit["two"], newLimit["two"]));
         const twoCardItems = forbiddenToTwoItems
             .concat(oneToTwoItems)
             .concat(freeToTwoItems)
@@ -356,18 +360,15 @@ $.getJSON("resources/regulation.json", (jsonFile: JsonFile) => {
         const forbiddenToFreeItems = createCardItemProps(
             _.difference(oldLimit["forbidden"], newLimitAll),
             labelSuccess,
-            "禁止 > 制限解除"
-        );
+            "禁止 > 制限解除");
         const oneToFreeItems = createCardItemProps(
             _.difference(oldLimit["one"], newLimitAll),
             labelSuccess,
-            "制限 > 制限解除"
-        );
+            "制限 > 制限解除");
         const twoToFreeItems = createCardItemProps(
             _.difference(oldLimit["two"], newLimitAll),
             labelSuccess,
-            "準制限 > 制限解除"
-        );
+            "準制限 > 制限解除");
         const freeCardItems = forbiddenToFreeItems
             .concat(oneToFreeItems)
             .concat(twoToFreeItems);
@@ -380,5 +381,7 @@ $.getJSON("resources/regulation.json", (jsonFile: JsonFile) => {
         };
     };
 
-    ReactDOM.render(<App rules={jsonFile.rules} computeDifference={computeDifference} />, document.getElementById("app"));
+    ReactDOM.render(
+        <App rules={jsonFile.rules} computeDifference={computeDifference} />,
+        document.getElementById("app"));
 });
