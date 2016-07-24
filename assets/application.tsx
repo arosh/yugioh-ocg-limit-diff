@@ -22,9 +22,6 @@ class RegulationSelecter extends React.Component<RegulationSelecterProps, {}> {
     }
 
     render() {
-        const FormGroup = ReactBootstrap.FormGroup;
-        const ControlLabel = ReactBootstrap.ControlLabel;
-        const FormControl = ReactBootstrap.FormControl;
         const options = this.props.rules.map((rule) => {
             return (
                 <option value={rule.key} key={rule.key}>{rule.name}</option>
@@ -32,24 +29,26 @@ class RegulationSelecter extends React.Component<RegulationSelecterProps, {}> {
         });
         return (
             <form>
-                <FormGroup>
-                    <ControlLabel>新レギュレーション</ControlLabel>
-                    <FormControl
-                        componentClass="select"
+                <div className="form-group">
+                    <label htmlFor="new-regulation">新レギュレーション</label>
+                    <select
+                        name="new-regulation"
+                        className="form-control"
                         onChange={this.onNewRegulationChange.bind(this) }
                         value={this.props.newKey}>
                         {options}
-                    </FormControl>
-                </FormGroup>
-                <FormGroup>
-                    <ControlLabel>旧レギュレーション</ControlLabel>
-                    <FormControl
-                        componentClass="select"
+                    </select>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="old-regulation">旧レギュレーション</label>
+                    <select
+                        name="old-regulation"
+                        className="form-control"
                         onChange={this.onOldRegulationChange.bind(this) }
                         value={this.props.oldKey}>
                         {options}
-                    </FormControl>
-                </FormGroup>
+                    </select>
+                </div>
             </form>
         );
     }
@@ -64,17 +63,23 @@ interface RegulationViewProps {
 
 class RegulationView extends React.Component<RegulationViewProps, {}> {
     render() {
-        const ListGroup = ReactBootstrap.ListGroup;
-        const ListGroupItem = ReactBootstrap.ListGroupItem;
-        const newUrl = this.props.keyToUrl[this.props.newKey];
+        const newUrl = this.props.keyToUrl[this.props.oldKey];
         const newName = this.props.keyToName[this.props.newKey];
-        const oldUrl = this.props.keyToUrl[this.props.oldKey];
+        const oldUrl = this.props.keyToUrl[this.props.newKey];
         const oldName = this.props.keyToName[this.props.oldKey];
         return (
-            <ListGroup>
-                <ListGroupItem>新レギュレーション：<a href={newUrl}>{newName}</a></ListGroupItem>
-                <ListGroupItem>旧レギュレーション：<a href={oldUrl}>{oldName}</a></ListGroupItem>
-            </ListGroup>
+            <ul className="list-group">
+                <li className="list-group-item">
+                    新レギュレーション：<a href={oldUrl}>
+                        {newName}
+                    </a>
+                </li>
+                <li className="list-group-item">
+                    旧レギュレーション：<a href={newUrl}>
+                        {oldName}
+                    </a>
+                </li>
+            </ul>
         );
     }
 }
@@ -82,27 +87,25 @@ class RegulationView extends React.Component<RegulationViewProps, {}> {
 interface CardItemProps {
     cardName: string;
     hasLabel: boolean;
-    labelStyle?: string;
+    labelClass?: string;
     labelText?: string;
 }
 
 class CardItem extends React.Component<CardItemProps, {}> {
     render() {
-        const Label = ReactBootstrap.Label;
-        const ListGroupItem = ReactBootstrap.ListGroupItem;
         if (!this.props.hasLabel) {
             return (
-                <ListGroupItem>{this.props.cardName}</ListGroupItem>
+                <li className="list-group-item">{this.props.cardName}</li>
             );
         }
         else {
             return (
-                <ListGroupItem>
-                    <Label bsStyle={this.props.labelStyle}>
+                <li className="list-group-item">
+                    <span className={this.props.labelClass}>
                         {this.props.labelText}
-                    </Label> {this.props.cardName}
+                    </span> {this.props.cardName}
                     {/*  スペースの入れ方に注意 */}
-                </ListGroupItem>
+                </li>
             );
         }
     }
@@ -114,18 +117,17 @@ interface CardListProps {
 
 class CardList extends React.Component<CardListProps, {}> {
     render() {
-        const ListGroup = ReactBootstrap.ListGroup;
         const cardItems = this.props.cardItems.map((item) => {
             return (
                 <CardItem cardName={item.cardName} hasLabel={item.hasLabel}
-                    labelStyle={item.labelStyle} labelText={item.labelText}
+                    labelClass={item.labelClass} labelText={item.labelText}
                     key={item.cardName} />
             );
         });
         return (
-            <ListGroup>
+            <ul className="list-group">
                 {cardItems}
-            </ListGroup>
+            </ul>
         );
     }
 }
@@ -261,19 +263,19 @@ $.getJSON("resources/regulation.json", (jsonFile: JsonFile) => {
         const newLimit = jsonFile.limits[newKey];
         const oldLimit = jsonFile.limits[oldKey];
 
-        const styleDanger = "danger";
-        const styleWarning = "warning";
-        const styleInfo = "info";
-        const styleSuccess = "success";
+        const labelDanger = "label label-danger";
+        const labelWarning = "label label-warning";
+        const labelInfo = "label label-info";
+        const labelSuccess = "label label-success";
         const oldLimitAll = _.union(oldLimit["forbidden"], oldLimit["one"], oldLimit["two"]);
         const newLimitAll = _.union(newLimit["forbidden"], newLimit["one"], newLimit["two"]);
 
-        const createCardItemProps = (cards: string[], labelStyle: string, labelText: string): CardItemProps[] => {
+        const createCardItemProps = (cards: string[], labelClass: string, labelText: string): CardItemProps[] => {
             return cards.map((card) => {
                 return {
                     cardName: card,
                     hasLabel: true,
-                    labelStyle,
+                    labelClass,
                     labelText,
                 };
             });
@@ -290,15 +292,15 @@ $.getJSON("resources/regulation.json", (jsonFile: JsonFile) => {
 
         const oneToForbiddenItems = createCardItemProps(
             _.intersection(oldLimit["one"], newLimit["forbidden"]),
-            styleDanger,
+            labelDanger,
             "制限 > 禁止");
         const twoToForbiddenItems = createCardItemProps(
             _.intersection(oldLimit["two"], newLimit["forbidden"]),
-            styleDanger,
+            labelDanger,
             "準制限 > 禁止");
         const freeToForbiddenItems = createCardItemProps(
             _.difference(newLimit["forbidden"], oldLimitAll),
-            styleDanger,
+            labelDanger,
             "無制限 > 禁止");
         const continuousForbiddenItems = createCardItemPropsWithoutLabels(
             _.intersection(oldLimit["forbidden"], newLimit["forbidden"])
@@ -310,17 +312,17 @@ $.getJSON("resources/regulation.json", (jsonFile: JsonFile) => {
 
         const forbiddenToOneitems = createCardItemProps(
             _.intersection(oldLimit["forbidden"], newLimit["one"]),
-            styleSuccess,
+            labelSuccess,
             "禁止 > 制限"
         );
         const twoToOneitems = createCardItemProps(
             _.intersection(oldLimit["two"], newLimit["one"]),
-            styleWarning,
+            labelWarning,
             "準制限 > 制限"
         );
         const freeToOneitems = createCardItemProps(
             _.difference(newLimit["one"], oldLimitAll),
-            styleWarning,
+            labelWarning,
             "無制限 > 制限"
         );
         const continuousOneItems = createCardItemPropsWithoutLabels(
@@ -333,15 +335,15 @@ $.getJSON("resources/regulation.json", (jsonFile: JsonFile) => {
 
         const forbiddenToTwoItems = createCardItemProps(
             _.intersection(oldLimit["forbidden"], newLimit["two"]),
-            styleSuccess,
+            labelSuccess,
             "禁止 > 準制限");
         const oneToTwoItems = createCardItemProps(
             _.intersection(oldLimit["one"], newLimit["two"]),
-            styleSuccess,
+            labelSuccess,
             "制限 > 準制限");
         const freeToTwoItems = createCardItemProps(
             _.difference(newLimit["two"], oldLimitAll),
-            styleInfo,
+            labelInfo,
             "無制限 > 準制限");
         const continuousTwoItems = createCardItemPropsWithoutLabels(
             _.intersection(oldLimit["two"], newLimit["two"])
@@ -353,17 +355,17 @@ $.getJSON("resources/regulation.json", (jsonFile: JsonFile) => {
 
         const forbiddenToFreeItems = createCardItemProps(
             _.difference(oldLimit["forbidden"], newLimitAll),
-            styleSuccess,
+            labelSuccess,
             "禁止 > 制限解除"
         );
         const oneToFreeItems = createCardItemProps(
             _.difference(oldLimit["one"], newLimitAll),
-            styleSuccess,
+            labelSuccess,
             "制限 > 制限解除"
         );
         const twoToFreeItems = createCardItemProps(
             _.difference(oldLimit["two"], newLimitAll),
-            styleSuccess,
+            labelSuccess,
             "準制限 > 制限解除"
         );
         const freeCardItems = forbiddenToFreeItems
