@@ -29,11 +29,11 @@ var RegulationView = (function (_super) {
         _super.apply(this, arguments);
     }
     RegulationView.prototype.render = function () {
-        var newUrl = this.props.keyToUrl[this.props.oldKey];
+        var newUrl = this.props.keyToUrl[this.props.newKey];
         var newName = this.props.keyToName[this.props.newKey];
-        var oldUrl = this.props.keyToUrl[this.props.newKey];
+        var oldUrl = this.props.keyToUrl[this.props.oldKey];
         var oldName = this.props.keyToName[this.props.oldKey];
-        return (React.createElement("ul", {className: "list-group"}, React.createElement("li", {className: "list-group-item"}, "新レギュレーション：", React.createElement("a", {href: oldUrl}, newName)), React.createElement("li", {className: "list-group-item"}, "旧レギュレーション：", React.createElement("a", {href: newUrl}, oldName))));
+        return (React.createElement("ul", {className: "list-group"}, React.createElement("li", {className: "list-group-item"}, "新レギュレーション：", React.createElement("a", {href: newUrl}, newName)), React.createElement("li", {className: "list-group-item"}, "旧レギュレーション：", React.createElement("a", {href: oldUrl}, oldName))));
     };
     return RegulationView;
 }(React.Component));
