@@ -16,10 +16,13 @@ var RegulationSelecter = (function (_super) {
         this.props.onOldKeyChange(e.target.value);
     };
     RegulationSelecter.prototype.render = function () {
+        var FormGroup = ReactBootstrap.FormGroup;
+        var ControlLabel = ReactBootstrap.ControlLabel;
+        var FormControl = ReactBootstrap.FormControl;
         var options = this.props.rules.map(function (rule) {
             return (React.createElement("option", {value: rule.key, key: rule.key}, rule.name));
         });
-        return (React.createElement("form", null, React.createElement("div", {className: "form-group"}, React.createElement("label", {htmlFor: "new-regulation"}, "新レギュレーション"), React.createElement("select", {name: "new-regulation", className: "form-control", onChange: this.onNewRegulationChange.bind(this), value: this.props.newKey}, options)), React.createElement("div", {className: "form-group"}, React.createElement("label", {htmlFor: "old-regulation"}, "旧レギュレーション"), React.createElement("select", {name: "old-regulation", className: "form-control", onChange: this.onOldRegulationChange.bind(this), value: this.props.oldKey}, options))));
+        return (React.createElement("form", null, React.createElement(FormGroup, null, React.createElement(ControlLabel, null, "新レギュレーション"), React.createElement(FormControl, {componentClass: "select", onChange: this.onNewRegulationChange.bind(this), value: this.props.newKey}, options)), React.createElement(FormGroup, null, React.createElement(ControlLabel, null, "旧レギュレーション"), React.createElement(FormControl, {componentClass: "select", onChange: this.onOldRegulationChange.bind(this), value: this.props.oldKey}, options))));
     };
     return RegulationSelecter;
 }(React.Component));
@@ -29,11 +32,13 @@ var RegulationView = (function (_super) {
         _super.apply(this, arguments);
     }
     RegulationView.prototype.render = function () {
-        var newUrl = this.props.keyToUrl[this.props.oldKey];
+        var ListGroup = ReactBootstrap.ListGroup;
+        var ListGroupItem = ReactBootstrap.ListGroupItem;
+        var newUrl = this.props.keyToUrl[this.props.newKey];
         var newName = this.props.keyToName[this.props.newKey];
-        var oldUrl = this.props.keyToUrl[this.props.newKey];
+        var oldUrl = this.props.keyToUrl[this.props.oldKey];
         var oldName = this.props.keyToName[this.props.oldKey];
-        return (React.createElement("ul", {className: "list-group"}, React.createElement("li", {className: "list-group-item"}, "新レギュレーション：", React.createElement("a", {href: oldUrl}, newName)), React.createElement("li", {className: "list-group-item"}, "旧レギュレーション：", React.createElement("a", {href: newUrl}, oldName))));
+        return (React.createElement(ListGroup, null, React.createElement(ListGroupItem, null, "新レギュレーション：", React.createElement("a", {href: newUrl}, newName)), React.createElement(ListGroupItem, null, "旧レギュレーション：", React.createElement("a", {href: oldUrl}, oldName))));
     };
     return RegulationView;
 }(React.Component));
@@ -43,11 +48,13 @@ var CardItem = (function (_super) {
         _super.apply(this, arguments);
     }
     CardItem.prototype.render = function () {
+        var Label = ReactBootstrap.Label;
+        var ListGroupItem = ReactBootstrap.ListGroupItem;
         if (!this.props.hasLabel) {
-            return (React.createElement("li", {className: "list-group-item"}, this.props.cardName));
+            return (React.createElement(ListGroupItem, null, this.props.cardName));
         }
         else {
-            return (React.createElement("li", {className: "list-group-item"}, React.createElement("span", {className: this.props.labelClass}, this.props.labelText), " ", this.props.cardName));
+            return (React.createElement(ListGroupItem, null, React.createElement(Label, {bsStyle: this.props.labelStyle}, this.props.labelText), " ", this.props.cardName));
         }
     };
     return CardItem;
@@ -58,10 +65,11 @@ var CardList = (function (_super) {
         _super.apply(this, arguments);
     }
     CardList.prototype.render = function () {
+        var ListGroup = ReactBootstrap.ListGroup;
         var cardItems = this.props.cardItems.map(function (item) {
-            return (React.createElement(CardItem, {cardName: item.cardName, hasLabel: item.hasLabel, labelClass: item.labelClass, labelText: item.labelText, key: item.cardName}));
+            return (React.createElement(CardItem, {cardName: item.cardName, hasLabel: item.hasLabel, labelStyle: item.labelStyle, labelText: item.labelText, key: item.cardName}));
         });
-        return (React.createElement("ul", {className: "list-group"}, cardItems));
+        return (React.createElement(ListGroup, null, cardItems));
     };
     return CardList;
 }(React.Component));
@@ -119,18 +127,18 @@ $.getJSON("resources/regulation.json", function (jsonFile) {
     var computeDifference = function (newKey, oldKey) {
         var newLimit = jsonFile.limits[newKey];
         var oldLimit = jsonFile.limits[oldKey];
-        var labelDanger = "label label-danger";
-        var labelWarning = "label label-warning";
-        var labelInfo = "label label-info";
-        var labelSuccess = "label label-success";
+        var styleDanger = "danger";
+        var styleWarning = "warning";
+        var styleInfo = "info";
+        var styleSuccess = "success";
         var oldLimitAll = _.union(oldLimit["forbidden"], oldLimit["one"], oldLimit["two"]);
         var newLimitAll = _.union(newLimit["forbidden"], newLimit["one"], newLimit["two"]);
-        var createCardItemProps = function (cards, labelClass, labelText) {
+        var createCardItemProps = function (cards, labelStyle, labelText) {
             return cards.map(function (card) {
                 return {
                     cardName: card,
                     hasLabel: true,
-                    labelClass: labelClass,
+                    labelStyle: labelStyle,
                     labelText: labelText
                 };
             });
@@ -143,33 +151,33 @@ $.getJSON("resources/regulation.json", function (jsonFile) {
                 };
             });
         };
-        var oneToForbiddenItems = createCardItemProps(_.intersection(oldLimit["one"], newLimit["forbidden"]), labelDanger, "制限 > 禁止");
-        var twoToForbiddenItems = createCardItemProps(_.intersection(oldLimit["two"], newLimit["forbidden"]), labelDanger, "準制限 > 禁止");
-        var freeToForbiddenItems = createCardItemProps(_.difference(newLimit["forbidden"], oldLimitAll), labelDanger, "無制限 > 禁止");
+        var oneToForbiddenItems = createCardItemProps(_.intersection(oldLimit["one"], newLimit["forbidden"]), styleDanger, "制限 > 禁止");
+        var twoToForbiddenItems = createCardItemProps(_.intersection(oldLimit["two"], newLimit["forbidden"]), styleDanger, "準制限 > 禁止");
+        var freeToForbiddenItems = createCardItemProps(_.difference(newLimit["forbidden"], oldLimitAll), styleDanger, "無制限 > 禁止");
         var continuousForbiddenItems = createCardItemPropsWithoutLabels(_.intersection(oldLimit["forbidden"], newLimit["forbidden"]));
         var forbiddenCardItems = oneToForbiddenItems
             .concat(twoToForbiddenItems)
             .concat(freeToForbiddenItems)
             .concat(continuousForbiddenItems);
-        var forbiddenToOneitems = createCardItemProps(_.intersection(oldLimit["forbidden"], newLimit["one"]), labelSuccess, "禁止 > 制限");
-        var twoToOneitems = createCardItemProps(_.intersection(oldLimit["two"], newLimit["one"]), labelWarning, "準制限 > 制限");
-        var freeToOneitems = createCardItemProps(_.difference(newLimit["one"], oldLimitAll), labelWarning, "無制限 > 制限");
+        var forbiddenToOneitems = createCardItemProps(_.intersection(oldLimit["forbidden"], newLimit["one"]), styleSuccess, "禁止 > 制限");
+        var twoToOneitems = createCardItemProps(_.intersection(oldLimit["two"], newLimit["one"]), styleWarning, "準制限 > 制限");
+        var freeToOneitems = createCardItemProps(_.difference(newLimit["one"], oldLimitAll), styleWarning, "無制限 > 制限");
         var continuousOneItems = createCardItemPropsWithoutLabels(_.intersection(oldLimit["one"], newLimit["one"]));
         var oneCardItems = forbiddenToOneitems
             .concat(twoToOneitems)
             .concat(freeToOneitems)
             .concat(continuousOneItems);
-        var forbiddenToTwoItems = createCardItemProps(_.intersection(oldLimit["forbidden"], newLimit["two"]), labelSuccess, "禁止 > 準制限");
-        var oneToTwoItems = createCardItemProps(_.intersection(oldLimit["one"], newLimit["two"]), labelSuccess, "制限 > 準制限");
-        var freeToTwoItems = createCardItemProps(_.difference(newLimit["two"], oldLimitAll), labelInfo, "無制限 > 準制限");
+        var forbiddenToTwoItems = createCardItemProps(_.intersection(oldLimit["forbidden"], newLimit["two"]), styleSuccess, "禁止 > 準制限");
+        var oneToTwoItems = createCardItemProps(_.intersection(oldLimit["one"], newLimit["two"]), styleSuccess, "制限 > 準制限");
+        var freeToTwoItems = createCardItemProps(_.difference(newLimit["two"], oldLimitAll), styleInfo, "無制限 > 準制限");
         var continuousTwoItems = createCardItemPropsWithoutLabels(_.intersection(oldLimit["two"], newLimit["two"]));
         var twoCardItems = forbiddenToTwoItems
             .concat(oneToTwoItems)
             .concat(freeToTwoItems)
             .concat(continuousTwoItems);
-        var forbiddenToFreeItems = createCardItemProps(_.difference(oldLimit["forbidden"], newLimitAll), labelSuccess, "禁止 > 制限解除");
-        var oneToFreeItems = createCardItemProps(_.difference(oldLimit["one"], newLimitAll), labelSuccess, "制限 > 制限解除");
-        var twoToFreeItems = createCardItemProps(_.difference(oldLimit["two"], newLimitAll), labelSuccess, "準制限 > 制限解除");
+        var forbiddenToFreeItems = createCardItemProps(_.difference(oldLimit["forbidden"], newLimitAll), styleSuccess, "禁止 > 制限解除");
+        var oneToFreeItems = createCardItemProps(_.difference(oldLimit["one"], newLimitAll), styleSuccess, "制限 > 制限解除");
+        var twoToFreeItems = createCardItemProps(_.difference(oldLimit["two"], newLimitAll), styleSuccess, "準制限 > 制限解除");
         var freeCardItems = forbiddenToFreeItems
             .concat(oneToFreeItems)
             .concat(twoToFreeItems);
