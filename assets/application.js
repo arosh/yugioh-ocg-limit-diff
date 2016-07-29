@@ -3,23 +3,25 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
+var React = __React;
+var ReactDOM = __React.__DOM;
 var RegulationSelecter = (function (_super) {
     __extends(RegulationSelecter, _super);
     function RegulationSelecter() {
         _super.apply(this, arguments);
     }
+    RegulationSelecter.prototype.render = function () {
+        var options = this.props.rules.map(function (rule) {
+            return (React.createElement("option", {value: rule.key, key: rule.key}, rule.name));
+        });
+        return (React.createElement("form", null, React.createElement("div", {className: "form-group"}, React.createElement("label", {htmlFor: "new-regulation"}, "新レギュレーション"), React.createElement("select", {name: "new-regulation", className: "form-control", onChange: this.onNewRegulationChange.bind(this), value: this.props.newKey}, options)), React.createElement("div", {className: "form-group"}, React.createElement("label", {htmlFor: "old-regulation"}, "旧レギュレーション"), React.createElement("select", {name: "old-regulation", className: "form-control", onChange: this.onOldRegulationChange.bind(this), value: this.props.oldKey}, options))));
+    };
     /* https://stackoverflow.com/questions/33256274/typesafe-select-onchange-event-using-reactjs-and-typescript */
     RegulationSelecter.prototype.onNewRegulationChange = function (e) {
         this.props.onNewKeyChange(e.target.value);
     };
     RegulationSelecter.prototype.onOldRegulationChange = function (e) {
         this.props.onOldKeyChange(e.target.value);
-    };
-    RegulationSelecter.prototype.render = function () {
-        var options = this.props.rules.map(function (rule) {
-            return (React.createElement("option", {value: rule.key, key: rule.key}, rule.name));
-        });
-        return (React.createElement("form", null, React.createElement("div", {className: "form-group"}, React.createElement("label", {htmlFor: "new-regulation"}, "新レギュレーション"), React.createElement("select", {name: "new-regulation", className: "form-control", onChange: this.onNewRegulationChange.bind(this), value: this.props.newKey}, options)), React.createElement("div", {className: "form-group"}, React.createElement("label", {htmlFor: "old-regulation"}, "旧レギュレーション"), React.createElement("select", {name: "old-regulation", className: "form-control", onChange: this.onOldRegulationChange.bind(this), value: this.props.oldKey}, options))));
     };
     return RegulationSelecter;
 }(React.Component));
@@ -96,8 +98,8 @@ var App = (function (_super) {
         this.state = {
             rules: rules.map(function (item) {
                 return {
-                    name: item.name,
-                    key: App.ignoreSlash(item.name)
+                    key: App.ignoreSlash(item.name),
+                    name: item.name
                 };
             }),
             newKey: newKey,
@@ -109,14 +111,14 @@ var App = (function (_super) {
     App.ignoreSlash = function (s) {
         return s.replace(/\//g, "");
     };
+    App.prototype.render = function () {
+        return (React.createElement("div", {className: "container"}, React.createElement("div", {className: "row"}, React.createElement("h1", {className: "text-center"}, "遊戯王OCG リミットレギュレーション比較ツール")), React.createElement("div", {className: "row"}, React.createElement("div", {className: "panel panel-default"}, React.createElement("div", {className: "panel-body"}, React.createElement(RegulationSelecter, {rules: this.state.rules, newKey: this.state.newKey, oldKey: this.state.oldKey, onNewKeyChange: this.onNewKeyChange.bind(this), onOldKeyChange: this.onOldKeyChange.bind(this)}))), React.createElement("div", {className: "panel panel-default"}, React.createElement(RegulationView, {newKey: this.state.newKey, oldKey: this.state.oldKey, keyToName: this.state.keyToName, keyToUrl: this.state.keyToUrl})), React.createElement(CardView, {newKey: this.state.newKey, oldKey: this.state.oldKey, computeDifference: this.props.computeDifference}))));
+    };
     App.prototype.onNewKeyChange = function (newKey) {
         this.setState({ newKey: newKey });
     };
     App.prototype.onOldKeyChange = function (oldKey) {
         this.setState({ oldKey: oldKey });
-    };
-    App.prototype.render = function () {
-        return (React.createElement("div", {className: "container"}, React.createElement("div", {className: "row"}, React.createElement("h1", {className: "text-center"}, "遊戯王OCG リミットレギュレーション比較ツール")), React.createElement("div", {className: "row"}, React.createElement("div", {className: "panel panel-default"}, React.createElement("div", {className: "panel-body"}, React.createElement(RegulationSelecter, {rules: this.state.rules, newKey: this.state.newKey, oldKey: this.state.oldKey, onNewKeyChange: this.onNewKeyChange.bind(this), onOldKeyChange: this.onOldKeyChange.bind(this)}))), React.createElement("div", {className: "panel panel-default"}, React.createElement(RegulationView, {newKey: this.state.newKey, oldKey: this.state.oldKey, keyToName: this.state.keyToName, keyToUrl: this.state.keyToUrl})), React.createElement(CardView, {newKey: this.state.newKey, oldKey: this.state.oldKey, computeDifference: this.props.computeDifference}))));
     };
     return App;
 }(React.Component));
@@ -128,8 +130,8 @@ $.getJSON("resources/regulation.json", function (jsonFile) {
         var labelWarning = "label label-warning";
         var labelInfo = "label label-info";
         var labelSuccess = "label label-success";
-        var oldLimitAll = _.union(oldLimit["forbidden"], oldLimit["one"], oldLimit["two"]);
-        var newLimitAll = _.union(newLimit["forbidden"], newLimit["one"], newLimit["two"]);
+        var oldLimitAll = _.union(oldLimit.forbidden, oldLimit.one, oldLimit.two);
+        var newLimitAll = _.union(newLimit.forbidden, newLimit.one, newLimit.two);
         var createCardItemProps = function (cards, labelClass, labelText) {
             return cards.map(function (card) {
                 return {
@@ -148,33 +150,33 @@ $.getJSON("resources/regulation.json", function (jsonFile) {
                 };
             });
         };
-        var oneToForbiddenItems = createCardItemProps(_.intersection(oldLimit["one"], newLimit["forbidden"]), labelDanger, "制限 > 禁止");
-        var twoToForbiddenItems = createCardItemProps(_.intersection(oldLimit["two"], newLimit["forbidden"]), labelDanger, "準制限 > 禁止");
-        var freeToForbiddenItems = createCardItemProps(_.difference(newLimit["forbidden"], oldLimitAll), labelDanger, "無制限 > 禁止");
-        var continuousForbiddenItems = createCardItemPropsWithoutLabels(_.intersection(oldLimit["forbidden"], newLimit["forbidden"]));
+        var oneToForbiddenItems = createCardItemProps(_.intersection(oldLimit.one, newLimit.forbidden), labelDanger, "制限 > 禁止");
+        var twoToForbiddenItems = createCardItemProps(_.intersection(oldLimit.two, newLimit.forbidden), labelDanger, "準制限 > 禁止");
+        var freeToForbiddenItems = createCardItemProps(_.difference(newLimit.forbidden, oldLimitAll), labelDanger, "無制限 > 禁止");
+        var continuousForbiddenItems = createCardItemPropsWithoutLabels(_.intersection(oldLimit.forbidden, newLimit.forbidden));
         var forbiddenCardItems = oneToForbiddenItems
             .concat(twoToForbiddenItems)
             .concat(freeToForbiddenItems)
             .concat(continuousForbiddenItems);
-        var forbiddenToOneitems = createCardItemProps(_.intersection(oldLimit["forbidden"], newLimit["one"]), labelSuccess, "禁止 > 制限");
-        var twoToOneitems = createCardItemProps(_.intersection(oldLimit["two"], newLimit["one"]), labelWarning, "準制限 > 制限");
-        var freeToOneitems = createCardItemProps(_.difference(newLimit["one"], oldLimitAll), labelWarning, "無制限 > 制限");
-        var continuousOneItems = createCardItemPropsWithoutLabels(_.intersection(oldLimit["one"], newLimit["one"]));
+        var forbiddenToOneitems = createCardItemProps(_.intersection(oldLimit.forbidden, newLimit.one), labelSuccess, "禁止 > 制限");
+        var twoToOneitems = createCardItemProps(_.intersection(oldLimit.two, newLimit.one), labelWarning, "準制限 > 制限");
+        var freeToOneitems = createCardItemProps(_.difference(newLimit.one, oldLimitAll), labelWarning, "無制限 > 制限");
+        var continuousOneItems = createCardItemPropsWithoutLabels(_.intersection(oldLimit.one, newLimit.one));
         var oneCardItems = forbiddenToOneitems
             .concat(twoToOneitems)
             .concat(freeToOneitems)
             .concat(continuousOneItems);
-        var forbiddenToTwoItems = createCardItemProps(_.intersection(oldLimit["forbidden"], newLimit["two"]), labelSuccess, "禁止 > 準制限");
-        var oneToTwoItems = createCardItemProps(_.intersection(oldLimit["one"], newLimit["two"]), labelSuccess, "制限 > 準制限");
-        var freeToTwoItems = createCardItemProps(_.difference(newLimit["two"], oldLimitAll), labelInfo, "無制限 > 準制限");
-        var continuousTwoItems = createCardItemPropsWithoutLabels(_.intersection(oldLimit["two"], newLimit["two"]));
+        var forbiddenToTwoItems = createCardItemProps(_.intersection(oldLimit.forbidden, newLimit.two), labelSuccess, "禁止 > 準制限");
+        var oneToTwoItems = createCardItemProps(_.intersection(oldLimit.one, newLimit.two), labelSuccess, "制限 > 準制限");
+        var freeToTwoItems = createCardItemProps(_.difference(newLimit.two, oldLimitAll), labelInfo, "無制限 > 準制限");
+        var continuousTwoItems = createCardItemPropsWithoutLabels(_.intersection(oldLimit.two, newLimit.two));
         var twoCardItems = forbiddenToTwoItems
             .concat(oneToTwoItems)
             .concat(freeToTwoItems)
             .concat(continuousTwoItems);
-        var forbiddenToFreeItems = createCardItemProps(_.difference(oldLimit["forbidden"], newLimitAll), labelSuccess, "禁止 > 制限解除");
-        var oneToFreeItems = createCardItemProps(_.difference(oldLimit["one"], newLimitAll), labelSuccess, "制限 > 制限解除");
-        var twoToFreeItems = createCardItemProps(_.difference(oldLimit["two"], newLimitAll), labelSuccess, "準制限 > 制限解除");
+        var forbiddenToFreeItems = createCardItemProps(_.difference(oldLimit.forbidden, newLimitAll), labelSuccess, "禁止 > 制限解除");
+        var oneToFreeItems = createCardItemProps(_.difference(oldLimit.one, newLimitAll), labelSuccess, "制限 > 制限解除");
+        var twoToFreeItems = createCardItemProps(_.difference(oldLimit.two, newLimitAll), labelSuccess, "準制限 > 制限解除");
         var freeCardItems = forbiddenToFreeItems
             .concat(oneToFreeItems)
             .concat(twoToFreeItems);

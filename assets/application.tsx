@@ -1,27 +1,21 @@
-interface Rule {
+import React = __React;
+import ReactDOM = __React.__DOM;
+
+interface IRule {
     key: string;
     name: string;
 }
 
-interface RegulationSelecterProps {
-    rules: Rule[];
+interface IRegulationSelecterProps {
+    rules: IRule[];
     newKey: string;
     oldKey: string;
     onNewKeyChange(newKey: string): void;
     onOldKeyChange(oldKey: string): void;
 }
 
-class RegulationSelecter extends React.Component<RegulationSelecterProps, {}> {
-    /* https://stackoverflow.com/questions/33256274/typesafe-select-onchange-event-using-reactjs-and-typescript */
-    onNewRegulationChange(e: any) {
-        this.props.onNewKeyChange(e.target.value);
-    }
-
-    onOldRegulationChange(e: any) {
-        this.props.onOldKeyChange(e.target.value);
-    }
-
-    render() {
+class RegulationSelecter extends React.Component<IRegulationSelecterProps, {}> {
+    public render() {
         const options = this.props.rules.map((rule) => {
             return (
                 <option value={rule.key} key={rule.key}>{rule.name}</option>
@@ -52,17 +46,26 @@ class RegulationSelecter extends React.Component<RegulationSelecterProps, {}> {
             </form>
         );
     }
+
+    /* https://stackoverflow.com/questions/33256274/typesafe-select-onchange-event-using-reactjs-and-typescript */
+    private onNewRegulationChange(e: any) {
+        this.props.onNewKeyChange(e.target.value);
+    }
+
+    private onOldRegulationChange(e: any) {
+        this.props.onOldKeyChange(e.target.value);
+    }
 }
 
-interface RegulationViewProps {
+interface IRegulationViewProps {
     newKey: string;
     oldKey: string;
     keyToName: { [index: string]: string };
     keyToUrl: { [index: string]: string };
 }
 
-class RegulationView extends React.Component<RegulationViewProps, {}> {
-    render() {
+class RegulationView extends React.Component<IRegulationViewProps, {}> {
+    public render() {
         const newUrl = this.props.keyToUrl[this.props.newKey];
         const newName = this.props.keyToName[this.props.newKey];
         const oldUrl = this.props.keyToUrl[this.props.oldKey];
@@ -84,21 +87,20 @@ class RegulationView extends React.Component<RegulationViewProps, {}> {
     }
 }
 
-interface CardItemProps {
+interface ICardItemProps {
     cardName: string;
     hasLabel: boolean;
     labelClass?: string;
     labelText?: string;
 }
 
-class CardItem extends React.Component<CardItemProps, {}> {
-    render() {
+class CardItem extends React.Component<ICardItemProps, {}> {
+    public render() {
         if (!this.props.hasLabel) {
             return (
                 <li className="list-group-item">{this.props.cardName}</li>
             );
-        }
-        else {
+        } else {
             return (
                 <li className="list-group-item">
                     <span className={this.props.labelClass}>
@@ -111,12 +113,12 @@ class CardItem extends React.Component<CardItemProps, {}> {
     }
 }
 
-interface CardListProps {
-    cardItems: CardItemProps[];
+interface ICardListProps {
+    cardItems: ICardItemProps[];
 }
 
-class CardList extends React.Component<CardListProps, {}> {
-    render() {
+class CardList extends React.Component<ICardListProps, {}> {
+    public render() {
         const cardItems = this.props.cardItems.map((item) => {
             return (
                 <CardItem cardName={item.cardName} hasLabel={item.hasLabel}
@@ -132,19 +134,19 @@ class CardList extends React.Component<CardListProps, {}> {
     }
 }
 
-interface CardViewProps {
+interface ICardViewProps {
     newKey: string;
     oldKey: string;
     computeDifference(newKey: string, oldKey: string): {
-        forbiddenCardItems: CardItemProps[],
-        oneCardItems: CardItemProps[],
-        twoCardItems: CardItemProps[],
-        freeCardItems: CardItemProps[]
+        forbiddenCardItems: ICardItemProps[],
+        oneCardItems: ICardItemProps[],
+        twoCardItems: ICardItemProps[],
+        freeCardItems: ICardItemProps[]
     };
 }
 
-class CardView extends React.Component<CardViewProps, {}> {
-    render() {
+class CardView extends React.Component<ICardViewProps, {}> {
+    public render() {
         const difference = this.props.computeDifference(this.props.newKey, this.props.oldKey);
         return (
             <div>
@@ -169,31 +171,41 @@ class CardView extends React.Component<CardViewProps, {}> {
     }
 }
 
-interface JsonFile {
+interface IJsonFile {
     rules: { name: string, url: string }[];
-    limits: { [ruleName: string]: { [limitType: string]: string } };
-}
-
-interface AppProps {
-    rules: { name: string, url: string }[];
-    computeDifference(newKey: string, oldKey: string): {
-        forbiddenCardItems: CardItemProps[],
-        oneCardItems: CardItemProps[],
-        twoCardItems: CardItemProps[],
-        freeCardItems: CardItemProps[]
+    limits: {
+        [ruleName: string]: {
+            forbidden: string[];
+            one: string[];
+            two: string[];
+        }
     };
 }
 
-interface AppState {
-    rules?: Rule[];
+interface IAppProps {
+    rules: { name: string, url: string }[];
+    computeDifference(newKey: string, oldKey: string): {
+        forbiddenCardItems: ICardItemProps[],
+        oneCardItems: ICardItemProps[],
+        twoCardItems: ICardItemProps[],
+        freeCardItems: ICardItemProps[]
+    };
+}
+
+interface IAppState {
+    rules?: IRule[];
     newKey?: string;
     oldKey?: string;
     keyToUrl?: { [index: string]: string };
     keyToName?: { [index: string]: string };
 }
 
-class App extends React.Component<AppProps, AppState> {
-    constructor(props?: AppProps, context?: any) {
+class App extends React.Component<IAppProps, IAppState> {
+    public static ignoreSlash(s: string) {
+        return s.replace(/\//g, "");
+    }
+
+    constructor(props?: IAppProps, context?: any) {
         super(props, context);
         const rules = this.props.rules.reverse();
         const keyToUrl: { [index: string]: string } = {};
@@ -210,8 +222,8 @@ class App extends React.Component<AppProps, AppState> {
         this.state = {
             rules: rules.map((item) => {
                 return {
+                    key: App.ignoreSlash(item.name),
                     name: item.name,
-                    key: App.ignoreSlash(item.name)
                 };
             }),
             newKey,
@@ -221,19 +233,7 @@ class App extends React.Component<AppProps, AppState> {
         };
     }
 
-    static ignoreSlash(s: string) {
-        return s.replace(/\//g, "");
-    }
-
-    onNewKeyChange(newKey: string) {
-        this.setState({ newKey });
-    }
-
-    onOldKeyChange(oldKey: string) {
-        this.setState({ oldKey });
-    }
-
-    render() {
+    public render() {
         return (
             <div className="container">
                 <div className="row">
@@ -265,10 +265,17 @@ class App extends React.Component<AppProps, AppState> {
             </div>
         );
     }
+
+    private onNewKeyChange(newKey: string) {
+        this.setState({ newKey });
+    }
+
+    private onOldKeyChange(oldKey: string) {
+        this.setState({ oldKey });
+    }
 }
 
-
-$.getJSON("resources/regulation.json", (jsonFile: JsonFile) => {
+$.getJSON("resources/regulation.json", (jsonFile: IJsonFile) => {
     const computeDifference = (newKey: string, oldKey: string) => {
         const newLimit = jsonFile.limits[newKey];
         const oldLimit = jsonFile.limits[oldKey];
@@ -277,10 +284,10 @@ $.getJSON("resources/regulation.json", (jsonFile: JsonFile) => {
         const labelWarning = "label label-warning";
         const labelInfo = "label label-info";
         const labelSuccess = "label label-success";
-        const oldLimitAll = _.union(oldLimit["forbidden"], oldLimit["one"], oldLimit["two"]);
-        const newLimitAll = _.union(newLimit["forbidden"], newLimit["one"], newLimit["two"]);
+        const oldLimitAll = _.union(oldLimit.forbidden, oldLimit.one, oldLimit.two);
+        const newLimitAll = _.union(newLimit.forbidden, newLimit.one, newLimit.two);
 
-        const createCardItemProps = (cards: string[], labelClass: string, labelText: string): CardItemProps[] => {
+        const createCardItemProps = (cards: string[], labelClass: string, labelText: string): ICardItemProps[] => {
             return cards.map((card) => {
                 return {
                     cardName: card,
@@ -291,7 +298,7 @@ $.getJSON("resources/regulation.json", (jsonFile: JsonFile) => {
             });
         };
 
-        const createCardItemPropsWithoutLabels = (cards: string[]): CardItemProps[] => {
+        const createCardItemPropsWithoutLabels = (cards: string[]): ICardItemProps[] => {
             return cards.map((card) => {
                 return {
                     cardName: card,
@@ -301,72 +308,72 @@ $.getJSON("resources/regulation.json", (jsonFile: JsonFile) => {
         };
 
         const oneToForbiddenItems = createCardItemProps(
-            _.intersection(oldLimit["one"], newLimit["forbidden"]),
+            _.intersection(oldLimit.one, newLimit.forbidden),
             labelDanger,
             "制限 > 禁止");
         const twoToForbiddenItems = createCardItemProps(
-            _.intersection(oldLimit["two"], newLimit["forbidden"]),
+            _.intersection(oldLimit.two, newLimit.forbidden),
             labelDanger,
             "準制限 > 禁止");
         const freeToForbiddenItems = createCardItemProps(
-            _.difference(newLimit["forbidden"], oldLimitAll),
+            _.difference(newLimit.forbidden, oldLimitAll),
             labelDanger,
             "無制限 > 禁止");
         const continuousForbiddenItems = createCardItemPropsWithoutLabels(
-            _.intersection(oldLimit["forbidden"], newLimit["forbidden"]));
+            _.intersection(oldLimit.forbidden, newLimit.forbidden));
         const forbiddenCardItems = oneToForbiddenItems
             .concat(twoToForbiddenItems)
             .concat(freeToForbiddenItems)
             .concat(continuousForbiddenItems);
 
         const forbiddenToOneitems = createCardItemProps(
-            _.intersection(oldLimit["forbidden"], newLimit["one"]),
+            _.intersection(oldLimit.forbidden, newLimit.one),
             labelSuccess,
             "禁止 > 制限");
         const twoToOneitems = createCardItemProps(
-            _.intersection(oldLimit["two"], newLimit["one"]),
+            _.intersection(oldLimit.two, newLimit.one),
             labelWarning,
             "準制限 > 制限");
         const freeToOneitems = createCardItemProps(
-            _.difference(newLimit["one"], oldLimitAll),
+            _.difference(newLimit.one, oldLimitAll),
             labelWarning,
             "無制限 > 制限");
         const continuousOneItems = createCardItemPropsWithoutLabels(
-            _.intersection(oldLimit["one"], newLimit["one"]));
+            _.intersection(oldLimit.one, newLimit.one));
         const oneCardItems = forbiddenToOneitems
             .concat(twoToOneitems)
             .concat(freeToOneitems)
             .concat(continuousOneItems);
 
         const forbiddenToTwoItems = createCardItemProps(
-            _.intersection(oldLimit["forbidden"], newLimit["two"]),
+            _.intersection(oldLimit.forbidden, newLimit.two),
             labelSuccess,
             "禁止 > 準制限");
         const oneToTwoItems = createCardItemProps(
-            _.intersection(oldLimit["one"], newLimit["two"]),
+            _.intersection(oldLimit.one, newLimit.two),
             labelSuccess,
             "制限 > 準制限");
         const freeToTwoItems = createCardItemProps(
-            _.difference(newLimit["two"], oldLimitAll),
+            _.difference(newLimit.two, oldLimitAll),
             labelInfo,
             "無制限 > 準制限");
         const continuousTwoItems = createCardItemPropsWithoutLabels(
-            _.intersection(oldLimit["two"], newLimit["two"]));
+            _.intersection(oldLimit.two, newLimit.two));
         const twoCardItems = forbiddenToTwoItems
             .concat(oneToTwoItems)
             .concat(freeToTwoItems)
             .concat(continuousTwoItems);
 
         const forbiddenToFreeItems = createCardItemProps(
-            _.difference(oldLimit["forbidden"], newLimitAll),
+            _.difference(oldLimit.forbidden, newLimitAll),
             labelSuccess,
             "禁止 > 制限解除");
         const oneToFreeItems = createCardItemProps(
-            _.difference(oldLimit["one"], newLimitAll),
+            _.difference(oldLimit.one, newLimitAll),
             labelSuccess,
             "制限 > 制限解除");
         const twoToFreeItems = createCardItemProps(
-            _.difference(oldLimit["two"], newLimitAll),
+            _.difference(oldLimit.two, newLimitAll),
             labelSuccess,
             "準制限 > 制限解除");
         const freeCardItems = forbiddenToFreeItems
