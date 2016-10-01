@@ -3,8 +3,6 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var React = __React;
-var ReactDOM = __React.__DOM;
 var RegulationSelecter = (function (_super) {
     __extends(RegulationSelecter, _super);
     function RegulationSelecter() {
@@ -14,7 +12,13 @@ var RegulationSelecter = (function (_super) {
         var options = this.props.rules.map(function (rule) {
             return (React.createElement("option", {value: rule.key, key: rule.key}, rule.name));
         });
-        return (React.createElement("form", null, React.createElement("div", {className: "form-group"}, React.createElement("label", {htmlFor: "new-regulation"}, "新レギュレーション"), React.createElement("select", {name: "new-regulation", className: "form-control", onChange: this.onNewRegulationChange.bind(this), value: this.props.newKey}, options)), React.createElement("div", {className: "form-group"}, React.createElement("label", {htmlFor: "old-regulation"}, "旧レギュレーション"), React.createElement("select", {name: "old-regulation", className: "form-control", onChange: this.onOldRegulationChange.bind(this), value: this.props.oldKey}, options))));
+        return (React.createElement("form", null, 
+            React.createElement("div", {className: "form-group"}, 
+                React.createElement("label", {htmlFor: "new-regulation"}, "新レギュレーション"), 
+                React.createElement("select", {name: "new-regulation", className: "form-control", onChange: this.onNewRegulationChange.bind(this), value: this.props.newKey}, options)), 
+            React.createElement("div", {className: "form-group"}, 
+                React.createElement("label", {htmlFor: "old-regulation"}, "旧レギュレーション"), 
+                React.createElement("select", {name: "old-regulation", className: "form-control", onChange: this.onOldRegulationChange.bind(this), value: this.props.oldKey}, options))));
     };
     /* https://stackoverflow.com/questions/33256274/typesafe-select-onchange-event-using-reactjs-and-typescript */
     RegulationSelecter.prototype.onNewRegulationChange = function (e) {
@@ -35,7 +39,13 @@ var RegulationView = (function (_super) {
         var newName = this.props.keyToName[this.props.newKey];
         var oldUrl = this.props.keyToUrl[this.props.oldKey];
         var oldName = this.props.keyToName[this.props.oldKey];
-        return (React.createElement("ul", {className: "list-group"}, React.createElement("li", {className: "list-group-item"}, "新レギュレーション：", React.createElement("a", {href: newUrl}, newName)), React.createElement("li", {className: "list-group-item"}, "旧レギュレーション：", React.createElement("a", {href: oldUrl}, oldName))));
+        return (React.createElement("ul", {className: "list-group"}, 
+            React.createElement("li", {className: "list-group-item"}, 
+                "新レギュレーション：", 
+                React.createElement("a", {href: newUrl}, newName)), 
+            React.createElement("li", {className: "list-group-item"}, 
+                "旧レギュレーション：", 
+                React.createElement("a", {href: oldUrl}, oldName))));
     };
     return RegulationView;
 }(React.Component));
@@ -49,7 +59,10 @@ var CardItem = (function (_super) {
             return (React.createElement("li", {className: "list-group-item"}, this.props.cardName));
         }
         else {
-            return (React.createElement("li", {className: "list-group-item"}, React.createElement("span", {className: this.props.labelClass}, this.props.labelText), " ", this.props.cardName));
+            return (React.createElement("li", {className: "list-group-item"}, 
+                React.createElement("span", {className: this.props.labelClass}, this.props.labelText), 
+                " ", 
+                this.props.cardName));
         }
     };
     return CardItem;
@@ -74,7 +87,19 @@ var CardView = (function (_super) {
     }
     CardView.prototype.render = function () {
         var difference = this.props.computeDifference(this.props.newKey, this.props.oldKey);
-        return (React.createElement("div", null, React.createElement("div", {className: "panel panel-danger"}, React.createElement("div", {className: "panel-heading"}, "禁止カード"), React.createElement(CardList, {cardItems: difference.forbiddenCardItems})), React.createElement("div", {className: "panel panel-warning"}, React.createElement("div", {className: "panel-heading"}, "制限カード"), React.createElement(CardList, {cardItems: difference.oneCardItems})), React.createElement("div", {className: "panel panel-info"}, React.createElement("div", {className: "panel-heading"}, "準制限カード"), React.createElement(CardList, {cardItems: difference.twoCardItems})), React.createElement("div", {className: "panel panel-success"}, React.createElement("div", {className: "panel-heading"}, "制限解除"), React.createElement(CardList, {cardItems: difference.freeCardItems}))));
+        return (React.createElement("div", null, 
+            React.createElement("div", {className: "panel panel-danger"}, 
+                React.createElement("div", {className: "panel-heading"}, "禁止カード"), 
+                React.createElement(CardList, {cardItems: difference.forbiddenCardItems})), 
+            React.createElement("div", {className: "panel panel-warning"}, 
+                React.createElement("div", {className: "panel-heading"}, "制限カード"), 
+                React.createElement(CardList, {cardItems: difference.oneCardItems})), 
+            React.createElement("div", {className: "panel panel-info"}, 
+                React.createElement("div", {className: "panel-heading"}, "準制限カード"), 
+                React.createElement(CardList, {cardItems: difference.twoCardItems})), 
+            React.createElement("div", {className: "panel panel-success"}, 
+                React.createElement("div", {className: "panel-heading"}, "制限解除"), 
+                React.createElement(CardList, {cardItems: difference.freeCardItems}))));
     };
     return CardView;
 }(React.Component));
@@ -112,7 +137,20 @@ var App = (function (_super) {
         return s.replace(/\//g, "");
     };
     App.prototype.render = function () {
-        return (React.createElement("div", {className: "container"}, React.createElement("div", {className: "row"}, React.createElement("h1", {className: "text-center"}, "遊戯王OCG リミットレギュレーション比較ツール")), React.createElement("div", {className: "row"}, React.createElement("div", {className: "panel panel-default"}, React.createElement("div", {className: "panel-body"}, React.createElement(RegulationSelecter, {rules: this.state.rules, newKey: this.state.newKey, oldKey: this.state.oldKey, onNewKeyChange: this.onNewKeyChange.bind(this), onOldKeyChange: this.onOldKeyChange.bind(this)}))), React.createElement("div", {className: "panel panel-default"}, React.createElement(RegulationView, {newKey: this.state.newKey, oldKey: this.state.oldKey, keyToName: this.state.keyToName, keyToUrl: this.state.keyToUrl})), React.createElement(CardView, {newKey: this.state.newKey, oldKey: this.state.oldKey, computeDifference: this.props.computeDifference}))));
+        return (React.createElement("div", {className: "container"}, 
+            React.createElement("div", {className: "row"}, 
+                React.createElement("h1", {className: "text-center"}, "遊戯王OCG リミットレギュレーション比較ツール")
+            ), 
+            React.createElement("div", {className: "row"}, 
+                React.createElement("div", {className: "panel panel-default"}, 
+                    React.createElement("div", {className: "panel-body"}, 
+                        React.createElement(RegulationSelecter, {rules: this.state.rules, newKey: this.state.newKey, oldKey: this.state.oldKey, onNewKeyChange: this.onNewKeyChange.bind(this), onOldKeyChange: this.onOldKeyChange.bind(this)})
+                    )
+                ), 
+                React.createElement("div", {className: "panel panel-default"}, 
+                    React.createElement(RegulationView, {newKey: this.state.newKey, oldKey: this.state.oldKey, keyToName: this.state.keyToName, keyToUrl: this.state.keyToUrl})
+                ), 
+                React.createElement(CardView, {newKey: this.state.newKey, oldKey: this.state.oldKey, computeDifference: this.props.computeDifference}))));
     };
     App.prototype.onNewKeyChange = function (newKey) {
         this.setState({ newKey: newKey });

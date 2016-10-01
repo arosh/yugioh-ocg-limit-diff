@@ -1,6 +1,3 @@
-import React = __React;
-import ReactDOM = __React.__DOM;
-
 interface IRule {
     key: string;
     name: string;
@@ -28,7 +25,7 @@ class RegulationSelecter extends React.Component<IRegulationSelecterProps, {}> {
                     <select
                         name="new-regulation"
                         className="form-control"
-                        onChange={this.onNewRegulationChange.bind(this) }
+                        onChange={this.onNewRegulationChange.bind(this)}
                         value={this.props.newKey}>
                         {options}
                     </select>
@@ -38,7 +35,7 @@ class RegulationSelecter extends React.Component<IRegulationSelecterProps, {}> {
                     <select
                         name="old-regulation"
                         className="form-control"
-                        onChange={this.onOldRegulationChange.bind(this) }
+                        onChange={this.onOldRegulationChange.bind(this)}
                         value={this.props.oldKey}>
                         {options}
                     </select>
@@ -201,7 +198,7 @@ interface IAppState {
 }
 
 class App extends React.Component<IAppProps, IAppState> {
-    public static ignoreSlash(s: string) {
+    private static ignoreSlash(s: string) {
         return s.replace(/\//g, "");
     }
 
@@ -246,8 +243,8 @@ class App extends React.Component<IAppProps, IAppState> {
                                 rules={this.state.rules}
                                 newKey={this.state.newKey}
                                 oldKey={this.state.oldKey}
-                                onNewKeyChange={this.onNewKeyChange.bind(this) }
-                                onOldKeyChange={this.onOldKeyChange.bind(this) } />
+                                onNewKeyChange={this.onNewKeyChange.bind(this)}
+                                onOldKeyChange={this.onOldKeyChange.bind(this)} />
                         </div>
                     </div>
                     <div className="panel panel-default">
