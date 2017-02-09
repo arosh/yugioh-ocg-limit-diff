@@ -1,19 +1,26 @@
 import React from 'react';
 
-class CardItem extends React.Component {
-  render() {
-    if (!this.props.hasLabel) {
-      return (
-        <li className="list-group-item">{this.props.cardName}</li>
-      );
-    }
+const CardItem = ({ hasLabel, labelLevel, labelText, cardName }) => {
+  if (!hasLabel) {
     return (
-      <li className="list-group-item">
-        <span className={this.props.labelClass}>
-          {this.props.labelText}
-        </span> {this.props.cardName}
-        {/*  スペースの入れ方に注意 */}
-      </li>
+      <li className="list-group-item">{cardName}</li>
     );
   }
-}
+  return (
+    <li className="list-group-item">
+      <span className={`label label-${labelLevel}`}>
+        {labelText}
+      </span> {cardName}
+      {/*  spanとcardNameの間にスペースを入れる */}
+    </li>
+  );
+};
+
+CardItem.propTypes = {
+  hasLabel: React.PropTypes.bool.isRequired,
+  labelLevel: React.PropTypes.string.isRequired,
+  labelText: React.PropTypes.string.isRequired,
+  cardName: React.PropTypes.string.isRequired,
+};
+
+export default CardItem;

@@ -1,12 +1,13 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
-import { Provider, connect } from 'react-redux';
+import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 // import App from './App';
+import CardListPanel from './CardListPanel';
 
-function counter(state = 0, action) {
+/* function counter(state = 0, action) {
   switch (action.type) {
     case 'INCREMENT':
       return state + 1;
@@ -50,11 +51,29 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-Todo = connect(mapStateToProps, mapDispatchToProps)(Todo);
+Todo = connect(mapStateToProps, mapDispatchToProps)(Todo);*/
+
+function reducer(state, action) {
+  return state;
+}
+
+const store = createStore(
+  reducer,
+  composeWithDevTools(applyMiddleware(thunk)),
+);
+
+const cardItems = [
+  {
+    hasLabel: true,
+    labelLevel: 'success',
+    labelText: '制限 > 準制限',
+    cardName: '聖なる魔術師',
+  },
+];
 
 render(
   <Provider store={store}>
-    <Todo />
+    <CardListPanel panelHeading="準制限カード" panelLevel="info" cardItems={cardItems} />
   </Provider>,
   document.getElementById('react-root'),
 );
