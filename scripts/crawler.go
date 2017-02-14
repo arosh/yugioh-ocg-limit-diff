@@ -9,12 +9,19 @@ import (
 	"path/filepath"
 	"strings"
 
+	"bufio"
 	"gopkg.in/yaml.v2"
+	"net/url"
 )
 
 type Rule struct {
 	Name string
 	Url  string
+}
+
+type Card struct {
+	LimitType string
+	Name      string
 }
 
 func loadConfig(name string) ([]Rule, error) {
@@ -45,7 +52,12 @@ func fetch(r Rule) error {
 		log.Printf("Skip: %s", filename)
 		return nil
 	}
-	resp, err := http.Get(r.Url)
+	showUrl, err := url.Parse(r.Url)
+	if err != nil {
+		return err
+	}
+	editUrl := fmt.Sprintf("http://yugioh-wiki.net/index.php?cmd=edit&page=%s", showUrl.RawQuery)
+	resp, err := http.Get(editUrl)
 	if err != nil {
 		return err
 	}
@@ -58,13 +70,22 @@ func fetch(r Rule) error {
 	if err != nil {
 		return err
 	}
-	err = ioutil.WriteFile(filename, body, 0644)
-	if err != nil {
+	if err = ioutil.WriteFile(filename, body, 0644); err != nil {
 		return err
 	}
 	log.Printf("Fetch: %s", r.Name)
 	return nil
 }
+
+//func extract(lines []string) []Card {
+//	cards := []Card{}
+//	limitType := ""
+//	regexpForbidden := regexp.MustCompile(`\*\*(\[\[)?禁止カード(\]\])?`)
+//	for _, line := range lines {
+//
+//	}
+//	return cards
+//}
 
 func main() {
 	rs, err := loadConfig("scripts/rules.yaml")
@@ -76,4 +97,24 @@ func main() {
 			log.Fatal(err)
 		}
 	}
+	//for _, r := range rs {
+	//	filename := makeFilename(r)
+	//	// http://stackoverflow.com/a/16615559
+	//	f, err := os.Open(filename)
+	//	if err != nil {
+	//		log.Fatal(err)
+	//	}
+	//	scanner := bufio.NewScanner(f)
+	//	for scanner.Scan() {
+	//
+	//	}
+	//	if err = scanner.Err(); err != nil {
+	//		log.Fatal(err)
+	//	}
+	//	f.Close()
+	//	bytes, err := ioutil.ReadFile(filename)
+	//	if err != nil {
+	//		log.Fatal(err)
+	//	}
+	//}
 }
