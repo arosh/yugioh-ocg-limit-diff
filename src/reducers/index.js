@@ -1,5 +1,5 @@
 const initialState = {};
-function compare(state=initialState, action) {
+function compare(state = initialState, action) {
 
 }
 

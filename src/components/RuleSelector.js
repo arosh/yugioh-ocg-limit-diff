@@ -11,7 +11,8 @@ const RuleSelector = () => {
           name="new-regulation"
           className="form-control"
           onChange={this.onNewRegulationChange.bind(this)}
-          value={this.props.newKey}>
+          value={this.props.newKey}
+        >
           {options}
         </select>
       </div>
@@ -21,7 +22,8 @@ const RuleSelector = () => {
           name="old-regulation"
           className="form-control"
           onChange={this.onOldRegulationChange.bind(this)}
-          value={this.props.oldKey}>
+          value={this.props.oldKey}
+        >
           {options}
         </select>
       </div>

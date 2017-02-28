@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 // import App from './App';
-import CardListPanel from './CardListPanel';
+import CardListPanel from './components/CardListPanel';
 
 /* function counter(state = 0, action) {
   switch (action.type) {
