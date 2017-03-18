@@ -2,5 +2,6 @@
   <div class="row">
     <h1 class="text-center">遊戯王 禁止制限比較ツール</h1>
   </div>
-  <app-rule-selector></app-rule-selector>
+  <app-rule-selector (submit)="onCompareChange($event)"></app-rule-selector>
+  <app-rule-view [compare]="compare"></app-rule-view>
 </div>

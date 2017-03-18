@@ -6,11 +6,13 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import {RuleListService} from './rule-list.service';
 import { RuleSelectorComponent } from './rule-selector/rule-selector.component';
+import { RuleViewComponent } from './rule-view/rule-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RuleSelectorComponent
+    RuleSelectorComponent,
+    RuleViewComponent
   ],
   imports: [
     BrowserModule,

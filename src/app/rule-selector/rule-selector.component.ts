@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { RuleListService } from 'app/rule-list.service';
 import { RuleListItem } from 'app/rule-list-item';
+import { Compare } from 'app/compare';
 
 @Component({
   selector: 'app-rule-selector',
@@ -8,20 +9,29 @@ import { RuleListItem } from 'app/rule-list-item';
   styleUrls: ['./rule-selector.component.css']
 })
 export class RuleSelectorComponent implements OnInit {
-  private ruleList: RuleListItem[];
-  private newRule: string;
-  private oldRule: string;
+  ruleList: RuleListItem[];
+  newRuleName: string;
+  oldRuleName: string;
+  @Output() submit = new EventEmitter<Compare>();
+
   constructor(private ruleListService: RuleListService) { }
 
   ngOnInit() {
     this.ruleListService.getIndex().then((ruleList) => {
       this.ruleList = ruleList;
-      this.newRule = this.ruleList[this.ruleList.length - 1].name;
-      this.oldRule = this.ruleList[this.ruleList.length - 2].name;
+      this.newRuleName = this.ruleList[this.ruleList.length - 1].name;
+      this.oldRuleName = this.ruleList[this.ruleList.length - 2].name;
+    }).then(() => {
+      this.onChange();
     });
   }
 
   onChange() {
-    console.log(`${this.newRule} - ${this.oldRule}`)
+    const newRule = this.ruleList.find((value) => value.name === this.newRuleName);
+    const oldRule = this.ruleList.find((value) => value.name === this.oldRuleName);
+    this.submit.emit({
+      newRule,
+      oldRule,
+    });
   }
 }
