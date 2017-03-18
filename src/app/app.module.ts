@@ -5,10 +5,12 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import {RuleListService} from './rule-list.service';
+import { RuleSelectorComponent } from './rule-selector/rule-selector.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RuleSelectorComponent
   ],
   imports: [
     BrowserModule,

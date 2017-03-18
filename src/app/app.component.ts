@@ -8,7 +8,6 @@ import { RuleListItem } from 'app/rule-list-item';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app works!';
   ruleList: RuleListItem[] = [];
 
   constructor(private ruleListService: RuleListService) { }
@@ -16,7 +15,6 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.ruleListService.getIndex().then((ruleList) => {
       this.ruleList = ruleList;
-      console.log(ruleList);
     });
   }
 }

@@ -6,13 +6,21 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class RuleListService {
   private url = 'assets/rules/index.json';
+  private ruleList: RuleListItem[] = null;
 
   constructor(private http: Http) { }
 
   getIndex(): Promise<RuleListItem[]> {
+    if (this.ruleList) {
+      return Promise.resolve(this.ruleList);
+    }
     return this.http.get(this.url)
       .toPromise()
       .then(this.extractData)
+      .then((data) => {
+        this.ruleList = data;
+        return data;
+      })
       .catch(this.handleError);
   }
 
