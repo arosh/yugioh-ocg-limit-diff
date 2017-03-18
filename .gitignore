@@ -1,8 +1,7 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 script/pukiwiki
-src/assets/rules.json
-src/assets/limits
+src/assets/rules
 
 # compiled output
 /dist

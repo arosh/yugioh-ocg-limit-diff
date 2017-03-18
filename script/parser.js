@@ -74,11 +74,11 @@ function parse (rule) {
 }
 
 const rules = yaml.safeLoad(fs.readFileSync('script/rules.yaml'))
-fs.writeFile('src/assets/rules.json', JSON.stringify(rules), {encoding: 'UTF-8'})
+fs.writeFile('src/assets/rules/index.json', JSON.stringify(rules), {encoding: 'UTF-8'})
 
 for (const rule of rules) {
   parse(rule).then((data) => {
-    const filename = `src/assets/limits/${ignoreSlash(rule.name)}.json`
+    const filename = `src/assets/rules/${ignoreSlash(rule.name)}.json`
     fs.writeFile(filename, JSON.stringify(data), {encoding: 'UTF-8'})
   })
 }
