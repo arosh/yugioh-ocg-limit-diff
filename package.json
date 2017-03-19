@@ -21,6 +21,8 @@
     "@angular/platform-browser-dynamic": "^2.4.0",
     "@angular/router": "^3.4.0",
     "core-js": "^2.4.1",
+    "lodash.difference": "^4.5.0",
+    "lodash.intersection": "^4.4.0",
     "rxjs": "^5.1.0",
     "zone.js": "^0.7.6"
   },
@@ -28,6 +30,8 @@
     "@angular/cli": "1.0.0-rc.2",
     "@angular/compiler-cli": "^2.4.0",
     "@types/jasmine": "2.5.38",
+    "@types/lodash.difference": "^4.5.1",
+    "@types/lodash.intersection": "^4.4.1",
     "@types/node": "~6.0.60",
     "cheerio": "^0.22.0",
     "codelyzer": "~2.0.0",

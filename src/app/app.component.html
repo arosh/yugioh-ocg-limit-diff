@@ -4,4 +4,10 @@
   </div>
   <app-rule-selector (submit)="onCompareChange($event)"></app-rule-selector>
   <app-rule-view [compare]="compare"></app-rule-view>
+  <div>
+    <app-card-list panelType="zero" [compare]="compare"></app-card-list>
+    <app-card-list panelType="one" [compare]="compare"></app-card-list>
+    <app-card-list panelType="two" [compare]="compare"></app-card-list>
+    <app-card-list panelType="three" [compare]="compare"></app-card-list>
+  </div>
 </div>

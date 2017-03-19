@@ -7,12 +7,16 @@ import { AppComponent } from './app.component';
 import {RuleListService} from './rule-list.service';
 import { RuleSelectorComponent } from './rule-selector/rule-selector.component';
 import { RuleViewComponent } from './rule-view/rule-view.component';
+import { CardItemComponent } from './card-item/card-item.component';
+import { CardListComponent } from './card-list/card-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RuleSelectorComponent,
-    RuleViewComponent
+    RuleViewComponent,
+    CardItemComponent,
+    CardListComponent
   ],
   imports: [
     BrowserModule,
