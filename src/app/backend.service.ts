@@ -5,7 +5,7 @@ import 'rxjs/add/operator/toPromise';
 import { Limit } from 'app/limit';
 
 @Injectable()
-export class RuleListService {
+export class BackendService {
   private baseUrl = 'assets/rules';
   private ruleList: RuleListItem[] = null;
   private ruleCache: { [key: string]: Limit } = {};

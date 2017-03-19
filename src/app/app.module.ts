@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import {RuleListService} from './rule-list.service';
+import { BackendService } from './backend.service';
 import { RuleSelectorComponent } from './rule-selector/rule-selector.component';
 import { RuleViewComponent } from './rule-view/rule-view.component';
 import { CardItemComponent } from './card-item/card-item.component';
@@ -23,7 +23,7 @@ import { CardListComponent } from './card-list/card-list.component';
     FormsModule,
     HttpModule
   ],
-  providers: [RuleListService],
+  providers: [BackendService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

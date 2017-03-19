@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RuleListService } from './rule-list.service';
+import { BackendService } from './backend.service';
 import { RuleListItem } from 'app/rule-list-item';
 import { Compare } from 'app/compare';
 
@@ -11,7 +11,7 @@ import { Compare } from 'app/compare';
 export class AppComponent {
   compare: Compare;
 
-  constructor(private ruleListService: RuleListService) { }
+  constructor(private ruleListService: BackendService) { }
 
   onCompareChange(compare: Compare) {
     this.compare = compare;

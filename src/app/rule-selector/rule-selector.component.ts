@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { RuleListService } from 'app/rule-list.service';
+import { BackendService } from 'app/backend.service';
 import { RuleListItem } from 'app/rule-list-item';
 import { Compare } from 'app/compare';
 
@@ -14,7 +14,7 @@ export class RuleSelectorComponent implements OnInit {
   oldRuleName: string;
   @Output() submit = new EventEmitter<Compare>();
 
-  constructor(private ruleListService: RuleListService) { }
+  constructor(private ruleListService: BackendService) { }
 
   ngOnInit() {
     this.ruleListService.getIndex().then((ruleList) => {

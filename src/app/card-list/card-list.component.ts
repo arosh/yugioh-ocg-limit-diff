@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Compare } from 'app/compare';
 import { Card } from 'app/card';
-import { RuleListService } from 'app/rule-list.service';
+import {BackendService } from 'app/backend.service';
 import * as _ from 'lodash';
 
 @Component({
@@ -13,7 +13,7 @@ export class CardListComponent {
   @Input() panelType: string;
   @Input() compare: Compare;
 
-  constructor(private ruleListService: RuleListService) { }
+  constructor(private ruleListService: BackendService) { }
 
   get heading(): string {
     switch (this.panelType) {
