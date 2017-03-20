@@ -1,6 +1,14 @@
-<div *ngIf="compare" class="panel panel-default">
+<div *ngIf="diffService.compare" class="panel panel-default">
   <ul class="list-group">
-    <li class="list-group-item">新レギュレーション：<a [href]="compare.newRule.url" target="_blank" rel="noopener">{{compare.newRule.name}}</a></li>
-    <li class="list-group-item">旧レギュレーション：<a [href]="compare.oldRule.url" target="_blank" rel="noopener">{{compare.oldRule.name}}</a></li>
+    <li class="list-group-item">
+      新レギュレーション：<a [href]="diffService.compare.newRule.url" target="_blank" rel="noopener">
+        {{diffService.compare.newRule.name}}
+        </a>
+    </li>
+    <li class="list-group-item">
+      旧レギュレーション：<a [href]="diffService.compare.oldRule.url" target="_blank" rel="noopener">
+        {{diffService.compare.oldRule.name}}
+        </a>
+    </li>
   </ul>
 </div>

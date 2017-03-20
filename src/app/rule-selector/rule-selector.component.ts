@@ -1,7 +1,7 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BackendService } from 'app/backend.service';
 import { RuleListItem } from 'app/rule-list-item';
-import { Compare } from 'app/compare';
+import { DiffService } from 'app/diff.service';
 
 @Component({
   selector: 'app-rule-selector',
@@ -11,10 +11,10 @@ export class RuleSelectorComponent implements OnInit {
   ruleList: RuleListItem[];
   newRuleName: string;
   oldRuleName: string;
-  @Output() submit = new EventEmitter<Compare>();
 
   constructor(
-    private ruleListService: BackendService) { }
+    private ruleListService: BackendService,
+    private diffService: DiffService) { }
 
   ngOnInit() {
     this.ruleListService.getIndex().then((ruleList) => {
@@ -29,9 +29,6 @@ export class RuleSelectorComponent implements OnInit {
   onChange() {
     const newRule = this.ruleList.find((value) => value.name === this.newRuleName);
     const oldRule = this.ruleList.find((value) => value.name === this.oldRuleName);
-    this.submit.emit({
-      newRule,
-      oldRule,
-    });
+    this.diffService.updateCompare({ newRule, oldRule });
   }
 }

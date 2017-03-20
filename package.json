@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "ng serve",
-    "lint": "ng lint --fix",
+    "lint": "ng lint --fix || true",
     "predeploy": "ng build -prod",
     "deploy": "gh-pages -d dist"
   },
