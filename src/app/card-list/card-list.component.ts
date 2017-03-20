@@ -1,19 +1,41 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Compare } from 'app/compare';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Card } from 'app/card';
-import {BackendService } from 'app/backend.service';
-import * as _ from 'lodash';
+import { DiffService } from 'app/diff.service';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-card-list',
   templateUrl: './card-list.component.html',
   styleUrls: ['./card-list.component.css']
 })
-export class CardListComponent {
+export class CardListComponent implements OnInit, OnDestroy {
+  subscription: Subscription;
   @Input() panelType: string;
-  @Input() compare: Compare;
+  cardItems: Card[];
 
-  constructor(private ruleListService: BackendService) { }
+  constructor(private diffService: DiffService) { }
+
+  ngOnInit(): void {
+    this.subscription = this.diffService.update.subscribe(() => {
+      switch (this.panelType) {
+        case 'zero':
+          this.cardItems = this.diffService.zero;
+          break;
+        case 'one':
+          this.cardItems = this.diffService.one;
+          break;
+        case 'two':
+          this.cardItems = this.diffService.two;
+          break;
+        case 'three':
+          this.cardItems = this.diffService.three;
+      }
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 
   get heading(): string {
     switch (this.panelType) {
@@ -39,14 +61,5 @@ export class CardListComponent {
       case 'three':
         return 'panel panel-success';
     }
-  }
-
-  get cardItems(): Card[] {
-    const oldName = this.compare.oldRule.name;
-    const newName = this.compare.newRule.name;
-    const oldLimit = this.ruleListService.getRule(this.compare.oldRule.name);
-    const newLimit = this.ruleListService.getRule(this.compare.newRule.name);
-    const cards: Card[] = [];
-    return [];
   }
 }

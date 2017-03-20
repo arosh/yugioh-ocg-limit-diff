@@ -1,13 +1,11 @@
 <div class="container">
   <div class="row">
     <h1 class="text-center">遊戯王 禁止制限比較ツール</h1>
-  </div>
-  <app-rule-selector (submit)="onCompareChange($event)"></app-rule-selector>
-  <app-rule-view [compare]="compare"></app-rule-view>
-  <div>
-    <app-card-list panelType="zero" [compare]="compare"></app-card-list>
-    <app-card-list panelType="one" [compare]="compare"></app-card-list>
-    <app-card-list panelType="two" [compare]="compare"></app-card-list>
-    <app-card-list panelType="three" [compare]="compare"></app-card-list>
+    <app-rule-selector (submit)="onCompareChange($event)"></app-rule-selector>
+    <app-rule-view [compare]="compare"></app-rule-view>
+    <app-card-list panelType="zero"></app-card-list>
+    <app-card-list panelType="one"></app-card-list>
+    <app-card-list panelType="two"></app-card-list>
+    <app-card-list panelType="three"></app-card-list>
   </div>
 </div>

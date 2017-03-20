@@ -1,6 +1,6 @@
-<div *ngIf="compare" [class]="panelClass">
+<div *ngIf="cardItems" [class]="panelClass">
   <div class="panel-heading">{{heading}}</div>
   <ul class="list-group">
-    <app-card-item *ngFor="let card of cardItems" [card]="card"></app-card-item>
+    <li class="list-group-item" app-card-item *ngFor="let card of cardItems" [card]="card"></li>
   </ul>
 </div>

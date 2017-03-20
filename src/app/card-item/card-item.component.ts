@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Card } from 'app/card';
 
 @Component({
-  selector: 'app-card-item',
+  selector: 'li[app-card-item]',
   templateUrl: './card-item.component.html',
   styleUrls: ['./card-item.component.css']
 })
@@ -32,7 +32,7 @@ export class CardItemComponent {
         break;
     }
     let nextText: string;
-    switch (this.card.prevStatus) {
+    switch (this.card.nextStatus) {
       case 'zero':
         nextText = '禁止';
         break;

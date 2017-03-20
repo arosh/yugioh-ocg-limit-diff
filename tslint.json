@@ -9,6 +9,9 @@
       true,
       "check-space"
     ],
+    "no-unused-variable": [
+      true
+    ],
     "curly": true,
     "eofline": true,
     "forin": true,

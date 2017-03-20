@@ -14,13 +14,14 @@ export class RuleSelectorComponent implements OnInit {
   oldRuleName: string;
   @Output() submit = new EventEmitter<Compare>();
 
-  constructor(private ruleListService: BackendService) { }
+  constructor(
+    private ruleListService: BackendService) { }
 
   ngOnInit() {
     this.ruleListService.getIndex().then((ruleList) => {
       this.ruleList = ruleList;
-      this.newRuleName = this.ruleList[this.ruleList.length - 1].name;
-      this.oldRuleName = this.ruleList[this.ruleList.length - 2].name;
+      this.newRuleName = this.ruleList[0].name;
+      this.oldRuleName = this.ruleList[1].name;
     }).then(() => {
       this.onChange();
     });

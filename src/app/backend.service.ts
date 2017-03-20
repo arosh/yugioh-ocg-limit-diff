@@ -24,6 +24,7 @@ export class BackendService {
       .toPromise()
       .then(this.extractJson)
       .then((data) => {
+        data = data.reverse();
         this.ruleList = data;
         return data;
       })
