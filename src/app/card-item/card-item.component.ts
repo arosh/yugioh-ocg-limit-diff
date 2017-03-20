@@ -4,7 +4,6 @@ import { Card } from 'app/card';
 @Component({
   selector: 'li[app-card-item]',
   templateUrl: './card-item.component.html',
-  styleUrls: ['./card-item.component.css']
 })
 export class CardItemComponent {
   @Input() card: Card;

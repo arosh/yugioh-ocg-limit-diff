@@ -6,7 +6,6 @@ import { Compare } from 'app/compare';
 @Component({
   selector: 'app-rule-selector',
   templateUrl: './rule-selector.component.html',
-  styleUrls: ['./rule-selector.component.css']
 })
 export class RuleSelectorComponent implements OnInit {
   ruleList: RuleListItem[];
