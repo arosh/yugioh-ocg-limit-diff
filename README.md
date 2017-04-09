@@ -7,6 +7,7 @@
 
 ```
 $ edit resources/rules.html
-$ python3 scripts/download.py
-$ python3 scripts/create_json.py
+$ python scripts/download.py
+$ python scripts/create_json.py
+$ yarn deploy
 ```
