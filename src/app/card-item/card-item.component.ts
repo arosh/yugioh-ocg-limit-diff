@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Card } from 'app/card';
 
 @Component({
-  selector: 'li[app-card-item]',
+  selector: 'app-card-item',
   templateUrl: './card-item.component.html',
 })
 export class CardItemComponent {
