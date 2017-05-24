@@ -19,7 +19,7 @@ function makeFilename(rule: { name: string }) {
 
 async function parse(rule: { name: string, url: string }) {
   const filename = makeFilename(rule);
-  const data: string = await fs.readFile(filename, { encoding: 'UTF-8' });
+  const data: string = await fs.readFile(filename, 'UTF-8');
   const $ = cheerio.load(data);
   const text = $('textarea[name="msg"]').text();
   const zero = [];
@@ -63,7 +63,7 @@ async function parse(rule: { name: string, url: string }) {
 
 async function run() {
   const options = { encoding: 'UTF-8' };
-  const rules = yaml.safeLoad(await fs.readFile('scripts/rules.yaml'));
+  const rules = yaml.safeLoad(await fs.readFile('scripts/rules.yaml', 'UTF-8'));
   fs.writeFile('src/resources/index.json', JSON.stringify(rules), options);
   for (const rule of rules) {
     const data = await parse(rule);

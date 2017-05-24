@@ -29,7 +29,7 @@ async function fetch(rule: { name: string, url: string }) {
   const filename = makeFilename(rule);
   let exists = false;
   try {
-    await fs.access(filename, fs.constants.F_OK);
+    await fs.access(filename);
     console.log(`Skip: ${rule.name}`);
     exists = true;
   } catch (err) {
@@ -58,7 +58,7 @@ async function fetch(rule: { name: string, url: string }) {
 }
 
 async function run() {
-  const rules = yaml.safeLoad(fs.readFileSync('scripts/rules.yaml'));
+  const rules = yaml.safeLoad(await fs.readFile('scripts/rules.yaml', 'UTF-8'));
   for (const rule of rules) {
     await fetch(rule);
   }
