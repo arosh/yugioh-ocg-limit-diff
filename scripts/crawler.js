@@ -1,16 +1,16 @@
 // @flow
-const fs = require('mz/fs');
-const yaml = require('js-yaml');
-const path = require('path');
-const url = require('url');
-const request = require('request');
-const iconv = require('iconv-lite');
+import * as fs from 'mz/fs';
+import * as yaml from 'js-yaml';
+import * as path from 'path';
+import * as url from 'url';
+import * as request from 'request';
+import * as iconv from 'iconv-lite';
 
-function ignoreSlash(s /*:string*/) /*:string*/ {
+function ignoreSlash(s: string): string {
   return s.replace(/\//g, '');
 }
 
-function makeFilename(rule /*: {name: string} */) {
+function makeFilename(rule: { name: string }) {
   const outdir = 'scripts/pukiwiki';
   return path.format({
     dir: outdir,
@@ -19,13 +19,13 @@ function makeFilename(rule /*: {name: string} */) {
   });
 }
 
-function waitFor(milliSecond)/*:Promise<void>*/ {
+function waitFor(milliSecond): Promise<void> {
   return new Promise(resolve => {
     setTimeout(resolve, milliSecond);
   });
 }
 
-async function fetch(rule /*: {name: string, url: string}*/) {
+async function fetch(rule: { name: string, url: string }) {
   const filename = makeFilename(rule);
   let exists = false;
   try {
@@ -38,7 +38,7 @@ async function fetch(rule /*: {name: string, url: string}*/) {
     }
   }
   if (!exists) {
-    const query /*:string*/ = (url.parse(rule.url).query /*:any*/);
+    const query: string = (url.parse(rule.url).query: any);
     const editUrl = `http://yugioh-wiki.net/index.php?cmd=edit&page=${query}`;
     const body = await new Promise((resolve, reject) => {
       request.get(editUrl, { encoding: null }, (err, resp, body) => {
@@ -53,7 +53,7 @@ async function fetch(rule /*: {name: string, url: string}*/) {
     const content = iconv.decode(new Buffer(body), 'EUC-JP');
     await fs.writeFile(filename, content);
     console.info(`Save: ${rule.name}`);
-    await waitFor(2000);    
+    await waitFor(2000);
   }
 }
 
