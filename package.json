@@ -23,7 +23,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "flow": "flow",
-    "format": "prettier --single-quote --trailing-comma es5 --write \"{src,scripts}/*.js\"",
+    "format": "prettier --single-quote --trailing-comma es5 --write \"{src,src/components,scripts}/*.js\"",
     "babel-node": "babel-node --presets flow,es2015"
   }
 }
