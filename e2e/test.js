@@ -20,7 +20,7 @@ test(async t => {
 
 test(async t => {
   const selector =
-    '#react-root > div > div.panel.panel-default > ul > li:nth-child(1) > a';
+    '#react-root > div > div:nth-child(4) > div > ul > li:nth-child(1) > a';
   const text = await browser.getText(selector);
   t.is(text, '2017/04/01');
   const href = await browser.getAttribute(selector, 'href');
@@ -31,7 +31,7 @@ test(async t => {
 
 test(async t => {
   const selector =
-    '#react-root > div > div.panel.panel-default > ul > li:nth-child(2) > a';
+    '#react-root > div > div:nth-child(4) > div > ul > li:nth-child(2) > a';
   const text = await browser.getText(selector);
   t.is(text, '2017/01/01');
   const href = await browser.getAttribute(selector, 'href');
@@ -45,7 +45,7 @@ test(async t => {
     '#react-root > div > div:nth-child(3) > div > div > form > div:nth-child(1) > select';
   await browser.selectByVisibleText(selector, '2016/10/01');
   selector =
-    '#react-root > div > div.panel.panel-default > ul > li:nth-child(1) > a';
+    '#react-root > div > div:nth-child(4) > div > ul > li:nth-child(1) > a';
   const text = await browser.getText(selector);
   t.is(text, '2016/10/01');
   const href = await browser.getAttribute(selector, 'href');

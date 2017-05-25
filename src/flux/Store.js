@@ -1,12 +1,17 @@
 // @flow
 import { ReduceStore } from 'flux/utils';
 import Dispatcher from './Dispatcher';
+import type { Card } from '../services/DiffService';
 
 type TState = {
-  newRule: string,
+  newName: string,
   newUrl: string,
-  oldRule: string,
+  oldName: string,
   oldUrl: string,
+  zero: Card[],
+  one: Card[],
+  two: Card[],
+  three: Card[],
 };
 
 type TPayload = {
@@ -21,10 +26,14 @@ class Store extends ReduceStore<TPayload, TState> {
 
   getInitialState() {
     return {
-      newRule: '',
+      newName: '',
       newUrl: '',
-      oldRule: '',
+      oldName: '',
       oldUrl: '',
+      zero: [],
+      one: [],
+      two: [],
+      three: [],
     };
   }
 

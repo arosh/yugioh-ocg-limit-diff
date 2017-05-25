@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "flux": "^3.1.2",
+    "lodash.difference": "^4.5.0",
+    "lodash.intersection": "^4.4.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },

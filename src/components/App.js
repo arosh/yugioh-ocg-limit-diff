@@ -4,6 +4,7 @@ import Header from './Header';
 import Notification from './Notification';
 import Form from './Form';
 import Rule from './Rule';
+import CardList from './CardList';
 
 export default () => (
   <div className="container">
@@ -11,5 +12,6 @@ export default () => (
     <Notification />
     <Form />
     <Rule />
+    <CardList />
   </div>
 );

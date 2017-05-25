@@ -4,9 +4,9 @@ import Store from '../flux/Store';
 
 class Rule extends React.Component {
   state: {
-    newRule: string,
+    newName: string,
     newUrl: string,
-    oldRule: string,
+    oldName: string,
     oldUrl: string,
   };
   static getStores() {
@@ -14,10 +14,11 @@ class Rule extends React.Component {
   }
   static calculateState() {
     const state = Store.getState();
+
     return {
-      newRule: state.newRule,
+      newName: state.newName,
       newUrl: state.newUrl,
-      oldRule: state.oldRule,
+      oldName: state.oldName,
       oldUrl: state.oldUrl,
     };
   }
@@ -31,7 +32,7 @@ class Rule extends React.Component {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {this.state.newRule}
+              {this.state.newName}
             </a>
           </li>
           <li className="list-group-item">
@@ -40,7 +41,7 @@ class Rule extends React.Component {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {this.state.oldRule}
+              {this.state.oldName}
             </a>
           </li>
         </ul>
