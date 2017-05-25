@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { Container } from 'flux/utils';
 import Store from '../flux/Store';
