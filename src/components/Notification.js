@@ -2,7 +2,7 @@
 import React from 'react';
 
 export default () => (
-  <div className="row">
+  <div>
     <p>遊戯王OCGのリミットレギュレーション（禁止・制限・準制限カード）を昔のものと最新のもので比較できます。</p>
     <p>次のようなシチュエーションで便利に使えます。</p>
     <ul>

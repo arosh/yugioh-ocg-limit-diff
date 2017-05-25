@@ -52,36 +52,34 @@ export default class Form extends React.Component {
   };
 
   render = () => (
-    <div className="row">
-      <div className="panel panel-default">
-        <div className="panel-body">
-          <form>
-            <div className="form-group">
-              <label>新レギュレーション</label>
-              <select
-                className="form-control"
-                value={this.state.newRule}
-                onChange={e => this.onChange('newRule', e.target.value)}
-              >
-                {this.state.items.map(item => (
-                  <option key={item.name} value={item.name}>{item.name}</option>
-                ))}
-              </select>
-            </div>
-            <div className="form-group">
-              <label>旧レギュレーション</label>
-              <select
-                className="form-control"
-                value={this.state.oldRule}
-                onChange={e => this.onChange('oldRule', e.target.value)}
-              >
-                {this.state.items.map(item => (
-                  <option key={item.name} value={item.name}>{item.name}</option>
-                ))}
-              </select>
-            </div>
-          </form>
-        </div>
+    <div className="panel panel-default">
+      <div className="panel-body">
+        <form>
+          <div className="form-group">
+            <label>新レギュレーション</label>
+            <select
+              className="form-control"
+              value={this.state.newRule}
+              onChange={e => this.onChange('newRule', e.target.value)}
+            >
+              {this.state.items.map(item => (
+                <option key={item.name} value={item.name}>{item.name}</option>
+              ))}
+            </select>
+          </div>
+          <div className="form-group">
+            <label>旧レギュレーション</label>
+            <select
+              className="form-control"
+              value={this.state.oldRule}
+              onChange={e => this.onChange('oldRule', e.target.value)}
+            >
+              {this.state.items.map(item => (
+                <option key={item.name} value={item.name}>{item.name}</option>
+              ))}
+            </select>
+          </div>
+        </form>
       </div>
     </div>
   );

@@ -26,7 +26,7 @@ class CardList extends React.Component {
     return { zero, one, two, three };
   }
   render = () => (
-    <div className="row">
+    <div>
       <div className="panel panel-danger">
         <div className="panel-heading">禁止カード</div>
         <ul className="list-group">

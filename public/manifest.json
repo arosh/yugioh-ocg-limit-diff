@@ -3,6 +3,6 @@
   "name": "遊戯王 禁止制限比較",
   "start_url": "./index.html",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#894206"
+  "theme_color": "#894206",
+  "background_color": "#FFFFFF"
 }
