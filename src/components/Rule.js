@@ -22,27 +22,29 @@ class Rule extends React.Component {
     };
   }
   render = () => (
-    <div className="panel panel-default">
-      <ul className="list-group">
-        <li className="list-group-item">
-          新レギュレーション：<a
-            href={this.state.newUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {this.state.newRule}
-          </a>
-        </li>
-        <li className="list-group-item">
-          旧レギュレーション：<a
-            href={this.state.oldUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {this.state.oldRule}
-          </a>
-        </li>
-      </ul>
+    <div className="row">
+      <div className="panel panel-default">
+        <ul className="list-group">
+          <li className="list-group-item">
+            新レギュレーション：<a
+              href={this.state.newUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {this.state.newRule}
+            </a>
+          </li>
+          <li className="list-group-item">
+            旧レギュレーション：<a
+              href={this.state.oldUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {this.state.oldRule}
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }
