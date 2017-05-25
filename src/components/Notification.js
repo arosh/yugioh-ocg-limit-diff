@@ -12,7 +12,11 @@ export default () => (
     <p>
       正確な情報が必要な場合は
       {' '}
-      <a href="http://www.yugioh-card.com/japan/event/shop_duel/limit_regulation.php">
+      <a
+        href="http://www.yugioh-card.com/japan/event/shop_duel/limit_regulation.php"
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+      >
         公式サイト
       </a>
       {' '}

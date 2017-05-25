@@ -31,7 +31,7 @@ class Rule extends React.Component {
             id="link-newRule"
             href={this.state.newUrl}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="nofollow noopener noreferrer"
           >
             {this.state.newName}
           </a>
@@ -41,7 +41,7 @@ class Rule extends React.Component {
             id="link-oldRule"
             href={this.state.oldUrl}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="nofollow noopener noreferrer"
           >
             {this.state.oldName}
           </a>
