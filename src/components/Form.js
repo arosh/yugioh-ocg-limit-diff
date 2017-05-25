@@ -1,12 +1,12 @@
 // @flow
 import React from 'react';
 import ProviderService from '../services/ProviderService';
-import type { ListItem } from '../services/ProviderService';
+import type { IndexItem } from '../services/ProviderService';
 import UseCase from '../flux/UseCase';
 
 export default class Form extends React.Component {
   state: {
-    items: ListItem[],
+    items: IndexItem[],
     newRule: string,
     oldRule: string,
   };
