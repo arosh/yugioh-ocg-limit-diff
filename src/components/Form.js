@@ -58,6 +58,7 @@ export default class Form extends React.Component {
           <div className="form-group">
             <label>新レギュレーション</label>
             <select
+              id="select-newRule"
               className="form-control"
               value={this.state.newRule}
               onChange={e => this.onChange('newRule', e.target.value)}
@@ -70,6 +71,7 @@ export default class Form extends React.Component {
           <div className="form-group">
             <label>旧レギュレーション</label>
             <select
+              id="select-oldRule"
               className="form-control"
               value={this.state.oldRule}
               onChange={e => this.onChange('oldRule', e.target.value)}

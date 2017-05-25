@@ -29,27 +29,19 @@ class CardList extends React.Component {
     <div>
       <div className="panel panel-danger">
         <div className="panel-heading">禁止カード</div>
-        <ul className="list-group">
-          <CardItemCollections items={this.state.zero} />
-        </ul>
+        <CardItemCollections items={this.state.zero} />
       </div>
       <div className="panel panel-warning">
         <div className="panel-heading">制限カード</div>
-        <ul className="list-group">
-          <CardItemCollections items={this.state.one} />
-        </ul>
+        <CardItemCollections items={this.state.one} />
       </div>
       <div className="panel panel-info">
         <div className="panel-heading">準制限カード</div>
-        <ul className="list-group">
-          <CardItemCollections items={this.state.two} />
-        </ul>
+        <CardItemCollections items={this.state.two} />
       </div>
       <div className="panel panel-success">
         <div className="panel-heading">制限解除</div>
-        <ul className="list-group">
-          <CardItemCollections items={this.state.three} />
-        </ul>
+        <CardItemCollections items={this.state.three} />
       </div>
     </div>
   );

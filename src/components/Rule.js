@@ -28,6 +28,7 @@ class Rule extends React.Component {
       <ul className="list-group">
         <li className="list-group-item">
           新レギュレーション：<a
+            id="link-newRule"
             href={this.state.newUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -37,6 +38,7 @@ class Rule extends React.Component {
         </li>
         <li className="list-group-item">
           旧レギュレーション：<a
+            id="link-oldRule"
             href={this.state.oldUrl}
             target="_blank"
             rel="noopener noreferrer"
