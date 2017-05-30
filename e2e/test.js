@@ -32,7 +32,7 @@ test.after.always(async t => {
 });
 
 test(async t => {
-  t.is(await browser.getTitle(), '遊戯王 禁止制限比較');
+  t.true((await browser.getTitle()).startsWith('遊戯王 禁止制限比較'));
 });
 
 test(async t => {
