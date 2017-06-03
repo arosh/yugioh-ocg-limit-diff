@@ -23,7 +23,7 @@ class Rule extends React.Component {
       oldUrl: state.oldUrl,
     };
   }
-  render = () => (
+  render = () =>
     <div className="panel panel-default">
       <ul className="list-group">
         <li className="list-group-item">
@@ -47,7 +47,6 @@ class Rule extends React.Component {
           </a>
         </li>
       </ul>
-    </div>
-  );
+    </div>;
 }
 export default Container.create(Rule);

@@ -5,11 +5,10 @@ import Store from '../flux/Store';
 import CardItem from './CardItem';
 import type { Card } from '../services/DiffService';
 
-const CardItemCollections = (props: { items: Card[] }) => (
+const CardItemCollections = (props: { items: Card[] }) =>
   <ul className="list-group">
     {props.items.map(item => <CardItem key={item.name} card={item} />)}
-  </ul>
-);
+  </ul>;
 
 class CardList extends React.Component {
   state: {
@@ -25,7 +24,7 @@ class CardList extends React.Component {
     const { zero, one, two, three } = Store.getState();
     return { zero, one, two, three };
   }
-  render = () => (
+  render = () =>
     <div>
       <div className="panel panel-danger">
         <div className="panel-heading">禁止カード</div>
@@ -43,8 +42,7 @@ class CardList extends React.Component {
         <div className="panel-heading">制限解除</div>
         <CardItemCollections items={this.state.three} />
       </div>
-    </div>
-  );
+    </div>;
 }
 
 export default Container.create(CardList);
