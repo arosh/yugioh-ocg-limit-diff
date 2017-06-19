@@ -38,20 +38,20 @@ test(async t => {
 test(async t => {
   const selector = '#link-newRule';
   const text = await browser.getText(selector);
-  t.is(text, '2017/04/01');
+  t.is(text, '2017/07/01');
   const href = await browser.getAttribute(selector, 'href');
   const url =
-    'http://yugioh-wiki.net/index.php?%A5%EA%A5%DF%A5%C3%A5%C8%A5%EC%A5%AE%A5%E5%A5%EC%A1%BC%A5%B7%A5%E7%A5%F3%2F2017%C7%AF4%B7%EE1%C6%FC';
+    'http://yugioh-wiki.net/index.php?%A5%EA%A5%DF%A5%C3%A5%C8%A5%EC%A5%AE%A5%E5%A5%EC%A1%BC%A5%B7%A5%E7%A5%F3%2F2017%C7%AF7%B7%EE1%C6%FC';
   t.is(href, url);
 });
 
 test(async t => {
   const selector = '#link-oldRule';
   const text = await browser.getText(selector);
-  t.is(text, '2017/01/01');
+  t.is(text, '2017/04/01');
   const href = await browser.getAttribute(selector, 'href');
   const url =
-    'http://yugioh-wiki.net/index.php?%A5%EA%A5%DF%A5%C3%A5%C8%A5%EC%A5%AE%A5%E5%A5%EC%A1%BC%A5%B7%A5%E7%A5%F3%2F2017%C7%AF1%B7%EE1%C6%FC';
+    'http://yugioh-wiki.net/index.php?%A5%EA%A5%DF%A5%C3%A5%C8%A5%EC%A5%AE%A5%E5%A5%EC%A1%BC%A5%B7%A5%E7%A5%F3%2F2017%C7%AF4%B7%EE1%C6%FC';
   t.is(href, url);
 });
 
