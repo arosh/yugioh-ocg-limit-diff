@@ -4,9 +4,11 @@ const btnTwitterStyle = {
   color: '#fff',
   backgroundColor: '#55acee',
   borderColor: '#4ca7ed',
+  marginBottom: '12px',
 };
 
-const tweetUrl = `http://twitter.com/intent/tweet?url=${encodeURIComponent('https://yugioh-f05e3.firebaseapp.com/')}&text=${document.title}`;
+const url = encodeURIComponent('https://yugioh-f05e3.firebaseapp.com/');
+const tweetUrl = `http://twitter.com/intent/tweet?url=${url}&text=${document.title}`;
 
 export default () =>
   <div>
@@ -21,7 +23,7 @@ export default () =>
           style={btnTwitterStyle}
         >
           <i className="fa fa-twitter fa-lg" /> ツイート
-      </a>
+        </a>
       </div>
     </div>
   </div>;
