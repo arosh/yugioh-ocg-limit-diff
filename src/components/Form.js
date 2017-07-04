@@ -64,7 +64,9 @@ export default class Form extends React.Component {
               onChange={e => this.onChange('newRule', e.target.value)}
             >
               {this.state.items.map(item =>
-                <option key={item.name} value={item.name}>{item.name}</option>
+                <option key={item.name} value={item.name}>
+                  {item.name}
+                </option>
               )}
             </select>
           </div>
@@ -77,7 +79,9 @@ export default class Form extends React.Component {
               onChange={e => this.onChange('oldRule', e.target.value)}
             >
               {this.state.items.map(item =>
-                <option key={item.name} value={item.name}>{item.name}</option>
+                <option key={item.name} value={item.name}>
+                  {item.name}
+                </option>
               )}
             </select>
           </div>

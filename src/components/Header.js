@@ -12,7 +12,9 @@ const tweetUrl = `http://twitter.com/intent/tweet?url=${url}&text=${document.tit
 
 export default () =>
   <div>
-    <h1 className="text-center">{document.title}</h1>
+    <h1 className="text-center">
+      {document.title}
+    </h1>
     <div className="clearfix">
       <div className="pull-right">
         <a

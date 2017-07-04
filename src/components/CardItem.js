@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import urlencode from 'urlencode';
 import type { Card } from '../services/DiffService';
 
 function hasLabel(prevStatus: string, nextStatus: string): boolean {
@@ -99,19 +100,59 @@ function labelClass(prevStatus: string, nextStatus: string): string {
   }
 }
 
+const styles = {
+  a: {
+    color: 'inherit',
+  },
+  // btn: {
+  //   marginTop: '-5px',
+  //   fontSize: '14px',
+  //   padding: '4px 10px',
+  // },
+};
+
+function yugiohWikiUrl(name) {
+  const pageName = `《${name}》`;
+  const encoded = urlencode(pageName, 'EUC-JP');
+  return `http://yugioh-wiki.net/index.php?cmd=read&page=${encoded}`;
+}
+
+// function xpgUrl(name) {
+//   const encoded = urlencode(name, 'Shift_JIS');
+//   return `https://ocg.xpg.jp/search/search.fcgi?Name=${encoded}&Mode=0`;
+// }
+
+// <a
+//   className="btn btn-default"
+//   href={xpgUrl(name)}
+//   style={styles.btn}
+//   target="_blank"
+//   rel="nofollow noopener noreferrer"
+// >
+//   <span className="glyphicon glyphicon-search" /> 遊戯王☆カード検索
+// </a>
+
 export default (props: { card: Card }) => {
   const { prevStatus, nextStatus, name } = props.card;
-  if (hasLabel(prevStatus, nextStatus)) {
-    return (
-      <li className="list-group-item">
-        <span className={labelClass(prevStatus, nextStatus)}>
-          {labelText(prevStatus, nextStatus)}
-        </span>
-        {' '}
+
+  return (
+    <li className="list-group-item">
+      {hasLabel(prevStatus, nextStatus) &&
+        <span>
+          <span className={labelClass(prevStatus, nextStatus)}>
+            {labelText(prevStatus, nextStatus)}
+          </span>{' '}
+        </span>}
+      <a
+        href={yugiohWikiUrl(name)}
+        target="_blank"
+        style={styles.a}
+        rel="nofollow noopener noreferrer"
+      >
         {name}
-      </li>
-    );
-  } else {
-    return <li className="list-group-item">{name}</li>;
-  }
+        {' '}
+        <span className="glyphicon glyphicon-link" />
+      </a>
+    </li>
+  );
 };

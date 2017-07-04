@@ -10,16 +10,14 @@ export default () =>
       <li>昔のデッキレシピを参考にしたいので、当時の禁止制限を調べたい</li>
     </ul>
     <p>
-      正確な情報が必要な場合は
-      {' '}
+      正確な情報が必要な場合は{' '}
       <a
         href="http://www.yugioh-card.com/japan/event/shop_duel/limit_regulation.php"
         target="_blank"
         rel="nofollow noopener noreferrer"
       >
         公式サイト
-      </a>
-      {' '}
+      </a>{' '}
       を確認してください。
     </p>
   </div>;
