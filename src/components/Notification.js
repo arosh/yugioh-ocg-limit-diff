@@ -14,7 +14,7 @@ export default () =>
       <a
         href="http://www.yugioh-card.com/japan/event/shop_duel/limit_regulation.php"
         target="_blank"
-        rel="nofollow noopener noreferrer"
+        rel="noopener noreferrer"
       >
         公式サイト
       </a>{' '}

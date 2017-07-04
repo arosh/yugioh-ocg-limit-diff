@@ -127,7 +127,7 @@ function yugiohWikiUrl(name) {
 //   href={xpgUrl(name)}
 //   style={styles.btn}
 //   target="_blank"
-//   rel="nofollow noopener noreferrer"
+//   rel="noopener noreferrer"
 // >
 //   <span className="glyphicon glyphicon-search" /> 遊戯王☆カード検索
 // </a>
@@ -147,7 +147,7 @@ export default (props: { card: Card }) => {
         href={yugiohWikiUrl(name)}
         target="_blank"
         style={styles.a}
-        rel="nofollow noopener noreferrer"
+        rel="noopener noreferrer"
       >
         {name} <span className="glyphicon glyphicon-link" />
       </a>

@@ -3,17 +3,14 @@ import React from 'react';
 import MoveTo from 'moveto';
 
 const styles = {
-  nav: {
-    minHeight: '50px',
-  },
   bottomNavigation: {
     backgroundColor: '#FFFFFF',
     left: 0,
     bottom: 0,
     position: 'fixed',
     width: '100vw',
-    zIndex: 2, // そのままだと FlatButton が浮き上がってしまう
-    boxShadow:
+    zIndex: 2,
+    boxShadow: // material-ui の bottom navigation をパクった
       'rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px',
   },
   navItem: { marginTop: '6px', marginBottom: '6px' },
