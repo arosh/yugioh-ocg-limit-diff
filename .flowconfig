@@ -1,5 +1,6 @@
 [ignore]
 .*/node_modules/flux/.*
+.*/node_modules/protobufjs/.*
 
 [include]
 
