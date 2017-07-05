@@ -10,14 +10,18 @@ const btnTwitterStyle = {
 const url = encodeURIComponent('https://yugioh-f05e3.firebaseapp.com/');
 const tweetUrl = `http://twitter.com/intent/tweet?url=${url}&text=${document.title}`;
 
+const Text = ({ children }) =>
+  <span style={{ display: 'inline-block' }}>
+    {children}
+  </span>;
+
 export default () =>
   <div>
     <h1 className="text-center">
-      <span style={{ display: 'inline-block' }}>遊戯王</span>{' '}
-      <span style={{ display: 'inline-block' }}>禁止制限比較ツール</span>
-      <span style={{ display: 'inline-block' }}>
-        {document.title.substr(13)}
-      </span>
+      <Text>{document.title.substr(0, 3)}</Text>{' '}
+      <Text>{document.title.substr(4, 4)}</Text>
+      <Text>{document.title.substr(8, 5)}</Text>
+      <Text>{document.title.substr(13)}</Text>
     </h1>
     <div className="clearfix">
       <div className="pull-right">
