@@ -10,7 +10,8 @@ const styles = {
     position: 'fixed',
     width: '100vw',
     zIndex: 2,
-    boxShadow: // material-ui の bottom navigation をパクった
+    // material-ui の bottom navigation をパクった
+    boxShadow:
       'rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px',
   },
   navItem: { marginTop: '6px', marginBottom: '6px' },

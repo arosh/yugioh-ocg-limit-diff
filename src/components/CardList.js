@@ -27,19 +27,27 @@ class CardList extends React.Component {
   render = () =>
     <div>
       <div className="panel panel-danger" id="list-zero">
-        <div className="panel-heading">禁止カード</div>
+        <div className="panel-heading">
+          <h3 className="panel-title">禁止カード</h3>
+        </div>
         <CardItemCollections items={this.state.zero} />
       </div>
       <div className="panel panel-warning" id="list-one">
-        <div className="panel-heading">制限カード</div>
+        <div className="panel-heading">
+          <h3 className="panel-title">制限カード</h3>
+        </div>
         <CardItemCollections items={this.state.one} />
       </div>
       <div className="panel panel-info" id="list-two">
-        <div className="panel-heading">準制限カード</div>
+        <div className="panel-heading">
+          <h3 className="panel-title">準制限カード</h3>
+        </div>
         <CardItemCollections items={this.state.two} />
       </div>
       <div className="panel panel-success" id="list-three">
-        <div className="panel-heading">制限解除</div>
+        <div className="panel-heading">
+          <h3 className="panel-title">制限解除</h3>
+        </div>
         <CardItemCollections items={this.state.three} />
       </div>
     </div>;
