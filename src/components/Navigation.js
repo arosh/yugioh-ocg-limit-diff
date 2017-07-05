@@ -4,7 +4,7 @@ import MoveTo from 'moveto';
 
 const styles = {
   bottomNavigation: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#f9f9f9',
     left: 0,
     bottom: 0,
     position: 'fixed',
@@ -12,7 +12,7 @@ const styles = {
     zIndex: 2,
     // material-ui の bottom navigation をパクった
     boxShadow:
-      'rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px',
+      'rgba(0, 0, 0, 0.36) 0px 1px 8px, rgba(0, 0, 0, 0.36) 0px 1px 6px',
   },
   navItem: { marginTop: '6px', marginBottom: '6px' },
 };
