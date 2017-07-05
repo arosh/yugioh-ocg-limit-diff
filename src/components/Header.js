@@ -13,7 +13,11 @@ const tweetUrl = `http://twitter.com/intent/tweet?url=${url}&text=${document.tit
 export default () =>
   <div>
     <h1 className="text-center">
-      {document.title}
+      <span style={{ display: 'inline-block' }}>遊戯王</span>{' '}
+      <span style={{ display: 'inline-block' }}>禁止制限比較ツール</span>
+      <span style={{ display: 'inline-block' }}>
+        {document.title.substr(13)}
+      </span>
     </h1>
     <div className="clearfix">
       <div className="pull-right">

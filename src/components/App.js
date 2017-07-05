@@ -9,16 +9,23 @@ import Navigation from './Navigation';
 
 const styles = {
   body: {
+    // Navigation のための padding
     paddingBottom: '50px',
   },
 };
 
 export default () =>
-  <div className="container" style={styles.body}>
-    <Header />
-    <Notification />
-    <Form />
-    <Rule />
-    <CardList />
+  <div style={styles.body}>
+    <div className="container">
+      <div className="row">
+        <div className="col-xs-12 col-md-offset-2 col-md-8">
+          <Header />
+          <Notification />
+          <Form />
+          <Rule />
+          <CardList />
+        </div>
+      </div>
+    </div>
     <Navigation />
   </div>;
