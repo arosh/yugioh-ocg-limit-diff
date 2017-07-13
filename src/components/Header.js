@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+
 const btnTwitterStyle = {
   color: '#fff',
   backgroundColor: '#55acee',

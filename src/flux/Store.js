@@ -1,6 +1,6 @@
 // @flow
-import { ReduceStore } from 'flux/utils';
-import Dispatcher from './Dispatcher';
+import { createStore } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import type { Card } from '../services/DiffService';
 
 type TState = {
@@ -16,37 +16,38 @@ type TState = {
 
 type TPayload = {
   type: string,
-  value: { newRule: string, newUrl: string, oldRule: string, oldUrl: string },
+  value: {
+    newRule: string,
+    newUrl: string,
+    oldRule: string,
+    oldUrl: string,
+    zero: Card[],
+    one: Card[],
+    two: Card[],
+    three: Card[],
+  },
 };
 
-class Store extends ReduceStore<TPayload, TState> {
-  constructor() {
-    super(Dispatcher);
-  }
+const initialState: TState = {
+  newName: '',
+  newUrl: '',
+  oldName: '',
+  oldUrl: '',
+  zero: [],
+  one: [],
+  two: [],
+  three: [],
+};
 
-  getInitialState() {
-    return {
-      newName: '',
-      newUrl: '',
-      oldName: '',
-      oldUrl: '',
-      zero: [],
-      one: [],
-      two: [],
-      three: [],
-    };
-  }
-
-  reduce(state: TState, action: TPayload) {
-    switch (action.type) {
-      case 'UPDATE_RULE':
-        return Object.assign({}, state, {
-          ...action.value,
-        });
-      default:
-        return state;
-    }
+function reduce(state: TState = initialState, action: TPayload) {
+  switch (action.type) {
+    case 'UPDATE_RULE':
+      return Object.assign({}, state, {
+        ...action.value,
+      });
+    default:
+      return state;
   }
 }
 
-export default new Store();
+export default createStore(reduce, composeWithDevTools());

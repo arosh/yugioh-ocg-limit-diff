@@ -1,52 +1,44 @@
 // @flow
 import React from 'react';
-import { Container } from 'flux/utils';
-import Store from '../flux/Store';
+import { connect } from 'react-redux';
 
 class Rule extends React.Component {
-  state: {
+  props: {
     newName: string,
     newUrl: string,
     oldName: string,
     oldUrl: string,
   };
-  static getStores() {
-    return [Store];
-  }
-  static calculateState() {
-    const state = Store.getState();
-
-    return {
-      newName: state.newName,
-      newUrl: state.newUrl,
-      oldName: state.oldName,
-      oldUrl: state.oldUrl,
-    };
-  }
   render = () =>
     <div className="panel panel-default">
       <ul className="list-group">
         <li className="list-group-item">
           新レギュレーション：<a
             id="link-newRule"
-            href={this.state.newUrl}
+            href={this.props.newUrl}
             target="_blank"
             rel="noopener noreferrer"
           >
-            {this.state.newName}
+            {this.props.newName}
           </a>
         </li>
         <li className="list-group-item">
           旧レギュレーション：<a
             id="link-oldRule"
-            href={this.state.oldUrl}
+            href={this.props.oldUrl}
             target="_blank"
             rel="noopener noreferrer"
           >
-            {this.state.oldName}
+            {this.props.oldName}
           </a>
         </li>
       </ul>
     </div>;
 }
-export default Container.create(Rule);
+
+export default connect(state => ({
+  newName: state.newName,
+  newUrl: state.newUrl,
+  oldName: state.oldName,
+  oldUrl: state.oldUrl,
+}))(Rule);

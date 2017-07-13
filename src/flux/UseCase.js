@@ -1,5 +1,5 @@
 // @flow
-import Dispatcher from './Dispatcher';
+import store from './Store';
 import ProviderService from '../services/ProviderService';
 import DiffService from '../services/DiffService';
 
@@ -16,7 +16,7 @@ class UseCase {
       oldName,
       newName
     );
-    Dispatcher.dispatch({
+    store.dispatch({
       type: 'UPDATE_RULE',
       value: {
         newName,
