@@ -41,5 +41,6 @@
     "babel-node": "babel-node --presets flow,es2015",
     "start:selenium": "selenium-standalone install && selenium-standalone start",
     "e2e": "ava --serial \"e2e/**/*.js\""
-  }
+  },
+  "homepage": "https://yugioh-f05e3.firebaseapp.com/"
 }

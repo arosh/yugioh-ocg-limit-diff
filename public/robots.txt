@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://yugioh-f05e3.firebaseapp.com/sitemap.txt
