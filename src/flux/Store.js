@@ -2,12 +2,14 @@
 import { createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import type { Card } from '../services/DiffService';
+import type { IndexItem } from '../services/ProviderService';
 
 type TState = {
   newName: string,
   newUrl: string,
   oldName: string,
   oldUrl: string,
+  selectOptions: IndexItem[],
   zero: Card[],
   one: Card[],
   two: Card[],
@@ -16,16 +18,7 @@ type TState = {
 
 type TPayload = {
   type: string,
-  value: {
-    newRule: string,
-    newUrl: string,
-    oldRule: string,
-    oldUrl: string,
-    zero: Card[],
-    one: Card[],
-    two: Card[],
-    three: Card[],
-  },
+  value: TState,
 };
 
 const initialState: TState = {
@@ -33,6 +26,7 @@ const initialState: TState = {
   newUrl: '',
   oldName: '',
   oldUrl: '',
+  selectOptions: [],
   zero: [],
   one: [],
   two: [],
@@ -41,7 +35,7 @@ const initialState: TState = {
 
 function reduce(state: TState = initialState, action: TPayload) {
   switch (action.type) {
-    case 'UPDATE_RULE':
+    case 'UPDATE':
       return Object.assign({}, state, {
         ...action.value,
       });
