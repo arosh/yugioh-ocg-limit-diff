@@ -149,7 +149,7 @@ export default (props: { card: Card }) => {
         style={styles.a}
         rel="noopener noreferrer"
       >
-        {name} <span className="glyphicon glyphicon-link" />
+        <span className="fa fa-external-link" /> {name}
       </a>
     </li>
   );

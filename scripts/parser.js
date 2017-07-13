@@ -3,10 +3,7 @@ import * as yaml from 'js-yaml';
 import * as cheerio from 'cheerio';
 import * as fs from 'mz/fs';
 import * as path from 'path';
-
-function ignoreSlash(s: string): string {
-  return s.replace(/\//g, '');
-}
+import ignoreSlash from './ignoreSlash';
 
 function makeFilename(rule: { name: string }) {
   const outdir = 'scripts/pukiwiki';

@@ -5,10 +5,7 @@ import * as path from 'path';
 import * as url from 'url';
 import * as request from 'request';
 import * as iconv from 'iconv-lite';
-
-function ignoreSlash(s: string): string {
-  return s.replace(/\//g, '');
-}
+import ignoreSlash from './ignoreSlash';
 
 function makeFilename(rule: { name: string }) {
   const outdir = 'scripts/pukiwiki';

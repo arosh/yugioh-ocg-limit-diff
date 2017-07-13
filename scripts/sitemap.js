@@ -1,10 +1,7 @@
 // @flow
 import * as fs from 'mz/fs';
 import * as yaml from 'js-yaml';
-
-function ignoreSlash(s: string): string {
-  return s.replace(/\//g, '');
-}
+import ignoreSlash from './ignoreSlash';
 
 async function run() {
   const baseUrl = 'https://yugioh-f05e3.firebaseapp.com/';

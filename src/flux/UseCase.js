@@ -1,4 +1,5 @@
 // @flow
+import * as qs from 'qs';
 import store from './Store';
 import ProviderService, { ignoreSlash } from '../services/ProviderService';
 import DiffService from '../services/DiffService';
@@ -13,9 +14,16 @@ async function canonicalNameInverse(name: string) {
   return '';
 }
 
+function replaceUrl(newName: string, oldName: string) {
+  newName = ignoreSlash(newName);
+  oldName = ignoreSlash(oldName);
+  window.history.replaceState(null, null, '?' + qs.stringify({new: newName, old: oldName}));
+}
+
 // ここで nameToUrl を計算せずに Rule のほうで計算するという方法を使いたくなるが，
 // Rule のほうに非同期処理を書ける適切な場所がないので仕方なくここに書いている
 export async function updateRule(newName: string, oldName: string) {
+  replaceUrl(newName, oldName);
   const index = await ProviderService.fetchIndex();
   const nameToUrl = {};
   for (const item of index) {

@@ -73,10 +73,11 @@ test(async t => {
   await page.setOldRule('2016/10/01');
   const selector = '#react-root div.panel.panel-danger ul';
   t.true(await browser.element(selector).isExisting('li*=マジェスペクター・ユニコーン'));
+  t.is(await browser.getUrl(), 'http://localhost:3000/?new=20170101&old=20161001');
 });
 
 test(async t => {
-  await browser.url('http://localhost:3000?new=20170401&old=20170101');
+  await browser.url('http://localhost:3000/?new=20170401&old=20170101');
 
   let selector = '#link-newRule';
   let text = await browser.getText(selector);
@@ -85,4 +86,6 @@ test(async t => {
   selector = '#link-oldRule';
   text = await browser.getText(selector);
   t.is(text, '2017/01/01');
+
+  t.is(await browser.getUrl(), 'http://localhost:3000/?new=20170401&old=20170101');
 });
