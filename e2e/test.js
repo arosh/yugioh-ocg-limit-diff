@@ -74,3 +74,15 @@ test(async t => {
   const selector = '#react-root div.panel.panel-danger ul';
   t.true(await browser.element(selector).isExisting('li*=マジェスペクター・ユニコーン'));
 });
+
+test(async t => {
+  await browser.url('http://localhost:3000?new=20170401&old=20170101');
+
+  let selector = '#link-newRule';
+  let text = await browser.getText(selector);
+  t.is(text, '2017/04/01');
+
+  selector = '#link-oldRule';
+  text = await browser.getText(selector);
+  t.is(text, '2017/01/01');
+});

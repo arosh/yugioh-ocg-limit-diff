@@ -1,12 +1,21 @@
 // @flow
 import store from './Store';
-import ProviderService from '../services/ProviderService';
+import ProviderService, { ignoreSlash } from '../services/ProviderService';
 import DiffService from '../services/DiffService';
+
+async function canonicalNameInverse(name: string) {
+  const index = await ProviderService.fetchIndex();
+  for (const item of index) {
+    if (ignoreSlash(item.name) === name) {
+      return item.name;
+    }
+  }
+  return '';
+}
 
 // ここで nameToUrl を計算せずに Rule のほうで計算するという方法を使いたくなるが，
 // Rule のほうに非同期処理を書ける適切な場所がないので仕方なくここに書いている
 export async function updateRule(newName: string, oldName: string) {
-  console.log(newName, oldName);
   const index = await ProviderService.fetchIndex();
   const nameToUrl = {};
   for (const item of index) {
@@ -31,7 +40,7 @@ export async function updateRule(newName: string, oldName: string) {
   });
 }
 
-export async function initialize() {
+export async function initialize(newName: string, oldName: string) {
   const items = await ProviderService.fetchIndex();
   items.reverse();
   store.dispatch({
@@ -40,5 +49,15 @@ export async function initialize() {
       selectOptions: items,
     },
   });
-  updateRule(items[0].name, items[1].name);
+  if (!newName) {
+    newName = items[0].name;
+  } else {
+    newName = await canonicalNameInverse(newName);
+  }
+  if (!oldName) {
+    oldName = items[1].name;
+  } else {
+    oldName = await canonicalNameInverse(oldName);
+  }
+  updateRule(newName, oldName);
 }

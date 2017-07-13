@@ -10,7 +10,7 @@ export type RuleObject = {
   two: string[],
 };
 
-function ignoreSlash(s: string): string {
+export function ignoreSlash(s: string): string {
   return s.replace(/\//g, '');
 }
 
