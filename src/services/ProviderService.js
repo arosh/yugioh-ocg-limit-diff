@@ -121,6 +121,8 @@ class ProviderService {
         return await import('../resources/20170401.json');
       case '20170701':
         return await import('../resources/20170701.json');
+      case '20171001':
+        return await import('../resources/20171001.json');
       default:
         throw new Error('canonicalName = ' + canonicalName);
     }

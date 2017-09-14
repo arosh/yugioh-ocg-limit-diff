@@ -48,6 +48,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=1999&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=1999&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=1999&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=1999&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=1999&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20000401&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20000401&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20000401&old=20000515
@@ -98,6 +99,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20000401&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20000401&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20000401&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20000401&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20000401&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20000515&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20000515&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20000515&old=20000515
@@ -148,6 +150,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20000515&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20000515&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20000515&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20000515&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20000515&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20000715&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20000715&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20000715&old=20000515
@@ -198,6 +201,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20000715&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20000715&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20000715&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20000715&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20000715&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20000815&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20000815&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20000815&old=20000515
@@ -248,6 +252,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20000815&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20000815&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20000815&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20000815&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20000815&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20001101&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20001101&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20001101&old=20000515
@@ -298,6 +303,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20001101&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20001101&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20001101&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20001101&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20001101&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20010115&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20010115&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20010115&old=20000515
@@ -348,6 +354,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20010115&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20010115&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20010115&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20010115&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20010115&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20010528&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20010528&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20010528&old=20000515
@@ -398,6 +405,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20010528&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20010528&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20010528&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20010528&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20010528&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20020101&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20020101&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20020101&old=20000515
@@ -448,6 +456,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20020101&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20020101&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20020101&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20020101&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20020101&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20020501&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20020501&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20020501&old=20000515
@@ -498,6 +507,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20020501&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20020501&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20020501&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20020501&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20020501&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20030101&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20030101&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20030101&old=20000515
@@ -548,6 +558,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20030101&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20030101&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20030101&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20030101&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20030101&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20030410&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20030410&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20030410&old=20000515
@@ -598,6 +609,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20030410&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20030410&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20030410&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20030410&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20030410&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20030701&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20030701&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20030701&old=20000515
@@ -648,6 +660,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20030701&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20030701&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20030701&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20030701&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20030701&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20031015&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20031015&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20031015&old=20000515
@@ -698,6 +711,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20031015&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20031015&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20031015&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20031015&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20031015&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20040301&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20040301&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20040301&old=20000515
@@ -748,6 +762,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20040301&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20040301&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20040301&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20040301&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20040301&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20040901&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20040901&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20040901&old=20000515
@@ -798,6 +813,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20040901&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20040901&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20040901&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20040901&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20040901&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20050301&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20050301&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20050301&old=20000515
@@ -848,6 +864,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20050301&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20050301&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20050301&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20050301&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20050301&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20050901&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20050901&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20050901&old=20000515
@@ -898,6 +915,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20050901&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20050901&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20050901&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20050901&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20050901&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20060301&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20060301&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20060301&old=20000515
@@ -948,6 +966,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20060301&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20060301&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20060301&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20060301&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20060301&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20060901&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20060901&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20060901&old=20000515
@@ -998,6 +1017,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20060901&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20060901&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20060901&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20060901&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20060901&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20070301&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20070301&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20070301&old=20000515
@@ -1048,6 +1068,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20070301&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20070301&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20070301&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20070301&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20070301&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20070901&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20070901&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20070901&old=20000515
@@ -1098,6 +1119,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20070901&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20070901&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20070901&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20070901&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20070901&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20080301&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20080301&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20080301&old=20000515
@@ -1148,6 +1170,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20080301&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20080301&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20080301&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20080301&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20080301&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20080901&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20080901&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20080901&old=20000515
@@ -1198,6 +1221,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20080901&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20080901&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20080901&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20080901&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20080901&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20090301&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20090301&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20090301&old=20000515
@@ -1248,6 +1272,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20090301&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20090301&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20090301&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20090301&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20090301&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20090901&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20090901&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20090901&old=20000515
@@ -1298,6 +1323,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20090901&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20090901&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20090901&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20090901&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20090901&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20100301&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20100301&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20100301&old=20000515
@@ -1348,6 +1374,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20100301&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20100301&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20100301&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20100301&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20100301&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20100901&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20100901&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20100901&old=20000515
@@ -1398,6 +1425,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20100901&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20100901&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20100901&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20100901&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20100901&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20110301&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20110301&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20110301&old=20000515
@@ -1448,6 +1476,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20110301&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20110301&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20110301&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20110301&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20110301&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20110901&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20110901&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20110901&old=20000515
@@ -1498,6 +1527,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20110901&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20110901&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20110901&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20110901&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20110901&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20120301&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20120301&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20120301&old=20000515
@@ -1548,6 +1578,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20120301&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20120301&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20120301&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20120301&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20120301&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20120901&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20120901&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20120901&old=20000515
@@ -1598,6 +1629,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20120901&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20120901&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20120901&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20120901&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20120901&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20130301&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20130301&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20130301&old=20000515
@@ -1648,6 +1680,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20130301&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20130301&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20130301&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20130301&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20130301&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20130901&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20130901&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20130901&old=20000515
@@ -1698,6 +1731,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20130901&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20130901&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20130901&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20130901&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20130901&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20131101&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20131101&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20131101&old=20000515
@@ -1748,6 +1782,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20131101&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20131101&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20131101&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20131101&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20131101&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20140201&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20140201&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20140201&old=20000515
@@ -1798,6 +1833,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20140201&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20140201&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20140201&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20140201&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20140201&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20140401&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20140401&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20140401&old=20000515
@@ -1848,6 +1884,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20140401&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20140401&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20140401&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20140401&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20140401&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20140701&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20140701&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20140701&old=20000515
@@ -1898,6 +1935,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20140701&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20140701&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20140701&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20140701&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20140701&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20141001&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20141001&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20141001&old=20000515
@@ -1948,6 +1986,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20141001&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20141001&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20141001&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20141001&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20141001&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20150101&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20150101&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20150101&old=20000515
@@ -1998,6 +2037,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20150101&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20150101&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20150101&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20150101&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20150101&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20150401&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20150401&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20150401&old=20000515
@@ -2048,6 +2088,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20150401&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20150401&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20150401&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20150401&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20150401&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20150701&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20150701&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20150701&old=20000515
@@ -2098,6 +2139,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20150701&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20150701&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20150701&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20150701&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20150701&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20151001&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20151001&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20151001&old=20000515
@@ -2148,6 +2190,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20151001&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20151001&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20151001&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20151001&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20151001&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20160101&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20160101&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20160101&old=20000515
@@ -2198,6 +2241,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20160101&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20160101&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20160101&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20160101&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20160101&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20160401&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20160401&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20160401&old=20000515
@@ -2248,6 +2292,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20160401&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20160401&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20160401&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20160401&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20160401&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20160701&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20160701&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20160701&old=20000515
@@ -2298,6 +2343,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20160701&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20160701&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20160701&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20160701&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20160701&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20161001&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20161001&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20161001&old=20000515
@@ -2348,6 +2394,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20161001&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20161001&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20161001&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20161001&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20161001&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20170101&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20170101&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20170101&old=20000515
@@ -2398,6 +2445,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20170101&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20170101&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20170101&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20170101&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20170101&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20170401&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20170401&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20170401&old=20000515
@@ -2448,6 +2496,7 @@ https://yugioh-f05e3.firebaseapp.com/?new=20170401&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20170401&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20170401&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20170401&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20170401&old=20171001
 https://yugioh-f05e3.firebaseapp.com/?new=20170701&old=1999
 https://yugioh-f05e3.firebaseapp.com/?new=20170701&old=20000401
 https://yugioh-f05e3.firebaseapp.com/?new=20170701&old=20000515
@@ -2498,3 +2547,55 @@ https://yugioh-f05e3.firebaseapp.com/?new=20170701&old=20161001
 https://yugioh-f05e3.firebaseapp.com/?new=20170701&old=20170101
 https://yugioh-f05e3.firebaseapp.com/?new=20170701&old=20170401
 https://yugioh-f05e3.firebaseapp.com/?new=20170701&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20170701&old=20171001
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=1999
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20000401
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20000515
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20000715
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20000815
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20001101
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20010115
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20010528
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20020101
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20020501
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20030101
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20030410
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20030701
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20031015
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20040301
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20040901
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20050301
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20050901
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20060301
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20060901
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20070301
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20070901
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20080301
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20080901
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20090301
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20090901
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20100301
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20100901
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20110301
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20110901
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20120301
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20120901
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20130301
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20130901
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20131101
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20140201
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20140401
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20140701
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20141001
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20150101
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20150401
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20150701
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20151001
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20160101
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20160401
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20160701
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20161001
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20170101
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20170401
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20170701
+https://yugioh-f05e3.firebaseapp.com/?new=20171001&old=20171001
