@@ -10,7 +10,7 @@ async function run() {
     const canonicalName = ignoreSlash(rule.name);
     console.log(`  case '${canonicalName}':`);
     console.log(
-      `    return await import('../resources/${canonicalName}.json');`
+      `    return await import('../resources/${canonicalName}.json').then(m => m.default);`
     );
   }
   console.log(`  default:`);
